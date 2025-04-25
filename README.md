@@ -22,7 +22,7 @@ Make sure you have the following tools installed:
     ```
 
 2. **Install dependencies**:
-    Ensure you're in the project folder and have `package.json` present, then run:
+    Ensure you're in the project folder and run:
 
     ```bash
     npm install
