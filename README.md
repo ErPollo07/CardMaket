@@ -1,89 +1,76 @@
 # Card Market
 
-## Build the project
+## Project Description
 
-This is a web project that uses Bootstrap, jQuery, and SCSS to build a responsive and interactive website.
+This is a web project that uses **Bootstrap**, **jQuery**, and **SCSS** to create a responsive and interactive website.
 
-### Prerequisites
+## Prerequisites
 
 Make sure you have the following tools installed:
 
 - [Node.js](https://nodejs.org/) (preferably the LTS version)
-- [npm](https://www.npmjs.com/) (JavaScript package manager, included with Node.js)
-- [Git](https://git-scm.com/) (to clone the repository, if needed)
+- [npm](https://www.npmjs.com/) (included with Node.js)
+- [Git](https://git-scm.com/) (to clone the repository)
 
-### Installation
+## Installation
 
-1. **Clone the repository** (if you haven't already):
+1. **Clone the repository**:
 
-    ```bash
-    git clone <repository-url>
-    cd <project-folder>
-    ```
+   ```bash
+   git clone <repository-url>
+   cd <project-folder>
+   ```
 
 2. **Install dependencies**:
-    Ensure you're in the project folder and run:
 
-    ```bash
-    npm install
-    ```
+   Make sure you are in the project folder and run:
 
-   This command will install all the dependencies listed in `package.json`, including Bootstrap, jQuery, and the packages required for SCSS.
+   ```bash
+   npm install
+   ```
 
-### Build Setup
+   This command will install all the dependencies listed in the `package.json` file, including **Bootstrap**, **jQuery**, and the necessary packages for SCSS.
 
-To build the project, you can use a series of scripts defined in the `package.json` file. These scripts allow you to compile SCSS, minify JavaScript, and handle other build tasks.
+## Development Environment Setup
 
-1. **Compile SCSS**:
-    To compile SCSS into CSS, run:
+### Available Scripts
 
-    ```bash
-    npm run build:scss
-    ```
+The scripts defined in the `package.json` file allow you to perform various development and build operations.
 
-2. **Minify JavaScript**:
-    To minify and optimize JavaScript files (including jQuery files), run:
+1. **Compile SCSS into CSS**:
+  
+  To compile scss run:
 
-    ```bash
-    npm run build:js
-    ```
+  ```bash
+  npm run scss
+  ```
 
-3. **Full build**:
-    To perform a complete build that compiles SCSS, minifies JavaScript, and copies necessary files into the output directories, run:
-
-    ```bash
-    npm run build
-    ```
-
-4. **Start the development server**:
-    If you want to see the project in action while working on it, you can start a development server:
-
-    ```bash
-    npm start
-    ```
-
-    This will start a local server (typically at `http://localhost:3000`) where you can view your changes in real-time.
-
-## Project Structure
+### Project Structure
 
 The project structure should look like this:
 
-PUT THE PROJECT STRUCTURE HERE
+```text
+CardMarket/
+├── src/
+│   ├── css/          # Generated CSS files
+│   ├── js/           # JavaScript files
+│   ├── scss/         # SCSS source files
+│   └── index.html    # Main HTML file
+├── package.json      # Project configuration and scripts
+├── package-lock.json # Dependency lock file
+└── README.md         # Project documentation
+```
 
-## Scripts in `package.json`
+## Contributions
 
-### `build:scss`
+If you want to contribute to the project:
 
-Compiles SCSS files into CSS, applying any production optimizations.
+1. Fork the repository.
+2. Create a branch for your changes: `git checkout -b feature/feature-name`.
+3. Commit your changes: `git commit -m "Description of changes"`.
+4. Push the branch: `git push origin feature/feature-name`.
+5. Open a pull request.
 
-### `build:js`
+## Known Issues
 
-Minifies JavaScript files, concatenating and compressing them for better performance in production.
-
-### `build`
-
-Runs the full build (compiling SCSS, minifying JS, and managing assets).
-
-### `start`
-
-Starts a development server to preview the site in real-time.
+If you encounter any issues, open an [issue](https://github.com/ErPollo07/CardMarket/issues) in the repository.
