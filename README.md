@@ -64,14 +64,13 @@ CardMarket/
 ```
 
 ### Create a new page
+---
 
-1. **Create a new html file**
+#### Create a new html file
 
 Create a new html file in the `scr/html` folder. Possibly name the file with the name of the page.
 Then create a js file in the `src/js` folder. This file will handle the logic of the page.
-
-  <br>
-
+<br>
 The file must follow this structure:
 
 ```html
@@ -93,7 +92,7 @@ The file must follow this structure:
 </html>
 ```
 
-2. **Create a scss file**
+#### Create a scss file
 
 To give the style to the page create a scss file in `src/scss` and the name of the file must be: `_{nameOfThePage}.scss`. <br>
 Then put this line in `src/scss/main.scss` file: `@import 'nameOfThePage'`
