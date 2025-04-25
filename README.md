@@ -94,7 +94,11 @@ The file must follow this structure:
 #### Create a scss file
 
 To give the style to the page create a scss file in `src/scss` and the name of the file must be: `_{nameOfThePage}.scss`. <br>
-Then put this line in `src/scss/main.scss` file: `@import 'nameOfThePage'`
+Then put this line in `src/scss/main.scss` file:
+
+```scss
+@import "nameOfThePage";
+```
 
 ## Contributions
 
