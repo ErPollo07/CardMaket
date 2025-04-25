@@ -23,27 +23,29 @@ Make sure you have the following tools installed:
 
 2. **Install dependencies**:
 
-   Make sure you are in the project folder and run:
+Make sure you are in the project folder and run:
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-   This command will install all the dependencies listed in the `package.json` file, including **Bootstrap**, **jQuery**, and the necessary packages for SCSS.
+This command will install all the dependencies listed in the `package.json` file, including **Bootstrap**, **jQuery**, and the necessary packages for SCSS.
 
-## Development Environment Setup
+## Development
 
-### Available Scripts
+### Enviorment Setup
+
+#### Available Scripts
 
 The scripts defined in the `package.json` file allow you to perform various development and build operations.
 
 1. **Compile SCSS into CSS**:
-  
-  To compile scss run:
 
-  ```bash
-  npm run scss
-  ```
+To compile scss run:
+
+```bash
+npm run scss
+```
 
 ### Project Structure
 
@@ -60,6 +62,41 @@ CardMarket/
 ├── package-lock.json # Dependency lock file
 └── README.md         # Project documentation
 ```
+
+### Create a new page
+
+1. **Create a new html file**
+
+Create a new html file in the `scr/html` folder. Possibly name the file with the name of the page.
+Then create a js file in the `src/js` folder. This file will handle the logic of the page.
+
+  <br>
+
+The file must follow this structure:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title of page</title>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <!-- content -->
+  </body>
+
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <!-- This is for jquery -->
+  <script src="path/to/js/of/the/page"></script>
+</html>
+```
+
+2. **Create a scss file**
+
+To give the style to the page create a scss file in `src/scss` and the name of the file must be: `_{nameOfThePage}.scss`. <br>
+Then put this line in `src/scss/main.scss` file: `@import 'nameOfThePage'`
 
 ## Contributions
 
