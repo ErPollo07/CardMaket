@@ -64,7 +64,6 @@ CardMarket/
 ```
 
 ### Create a new page
----
 
 #### Create a new html file
 
