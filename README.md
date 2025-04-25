@@ -14,14 +14,14 @@ Make sure you have the following tools installed:
 
 ## Installation
 
-1. **Clone the repository**:
+### Clone the repository
 
-   ```bash
-   git clone <repository-url>
-   cd <project-folder>
-   ```
+```bash
+git clone <repository-url>
+cd <project-folder>
+```
 
-2. **Install dependencies**:
+### Install dependencies
 
 Make sure you are in the project folder and run:
 
