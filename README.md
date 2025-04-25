@@ -33,20 +33,6 @@ This command will install all the dependencies listed in the `package.json` file
 
 ## Development
 
-### Enviorment Setup
-
-#### Available Scripts
-
-The scripts defined in the `package.json` file allow you to perform various development and build operations.
-
-1. **Compile SCSS into CSS**:
-
-To compile scss run:
-
-```bash
-npm run scss
-```
-
 ### Project Structure
 
 The project structure should look like this:
@@ -61,6 +47,18 @@ CardMarket/
 ├── package.json      # Project configuration and scripts
 ├── package-lock.json # Dependency lock file
 └── README.md         # Project documentation
+```
+
+### Available Scripts
+
+The scripts defined in the `package.json` file allow you to perform various development and build operations.
+
+#### Compile SCSS into CSS
+
+To compile scss run:
+
+```bash
+npm run scss
 ```
 
 ### Create a new page
