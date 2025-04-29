@@ -1,0 +1,22 @@
+[
+  {
+    "name": "carta 1",
+    "price": 10
+  },
+  {
+    "name": "carta 2",
+    "price": 20
+  },
+  {
+    "name": "carta 3",
+    "price": 15
+  },
+  {
+    "name": "carta 4",
+    "price": 35
+  },
+  {
+    "name": "carta 5",
+    "price": 62
+  }
+]
