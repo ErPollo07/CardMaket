@@ -11,6 +11,7 @@ Make sure you have the following tools installed:
 - [Node.js](https://nodejs.org/) (preferably the LTS version)
 - [npm](https://www.npmjs.com/) (included with Node.js)
 - [Git](https://git-scm.com/) (to clone the repository)
+- [Live Server](https://marketplace.visualstudio.com/items/?itemName=ritwickdey.LiveServer) (to start a live server for debugging)
 
 ## Installation
 
