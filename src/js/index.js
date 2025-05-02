@@ -1,8 +1,8 @@
 const search_bar = $("#search-bar");
 const search_form = $("#search-form");
 
-search_form.on('submit', function(e) {
-  e.preventDefault();
+search_form.on('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
   console.log(search_bar.val());
  
   const search_term = search_bar.val()

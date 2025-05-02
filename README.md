@@ -12,6 +12,7 @@ Make sure you have the following tools installed:
 - [npm](https://www.npmjs.com/) (included with Node.js)
 - [Git](https://git-scm.com/) (to clone the repository)
 - [Live Server](https://marketplace.visualstudio.com/items/?itemName=ritwickdey.LiveServer) (to start a live server for debugging)
+- [Editor Config](https://marketplace.visualstudio.com/items/?itemName=EditorConfig.EditorConfig) (to have the correct style of code)
 
 ## Installation
 
