@@ -1,6 +1,16 @@
 [
   {
     "username": "admin",
-    "password": "admin"
+    "password": "admin",
+    "cart": [
+      {
+        "name": "test 1",
+        "price": 10
+      },
+      {
+        "name": "test 2",
+        "price": 20
+      }
+    ]
   }
 ]
