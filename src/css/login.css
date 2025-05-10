@@ -6,12 +6,12 @@
     <title>Login</title>
     <style>
         body {
-            font-family: 'Nunito', sans-serif; /* Ho scelto un font carino da Google Fonts */
+            font-family: 'Nunito', sans-serif; 
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #fdd835, #ff9800); /* Un gradiente caldo */
+            background: linear-gradient(135deg, #fdd835, #ff9800); 
             margin: 0;
         }
 
@@ -19,10 +19,10 @@
             background-color: #fff;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombra più marcata */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             text-align: center;
             position: relative;
-            animation: fadeIn 0.5s ease-out; /* Una leggera animazione all'apparire */
+            animation: fadeIn 0.5s ease-out; 
         }
 
         @keyframes fadeIn {
@@ -36,9 +36,9 @@
             left: 50%;
             transform: translateX(-50%) rotate(0deg);
             font-size: 2.5em;
-            color: #ffeb3b; /* Giallo più vivace */
+            color: #ffeb3b; 
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-            animation: spin 2s linear infinite; /* Anima la stella */
+            animation: spin 2s linear infinite;
         }
 
         @keyframes spin {
@@ -54,40 +54,40 @@
         input[type="password"] {
             width: 280px;
             padding: 12px;
-            border: 2px solid #ffc107; /* Bordo colorato */
+            border: 2px solid #ffc107;
             border-radius: 8px;
             box-sizing: border-box;
             margin-top: 8px;
             font-size: 1em;
-            transition: border-color 0.3s ease; /* Transizione fluida del bordo */
+            transition: border-color 0.3s ease; 
         }
 
         input[type="text"]:focus,
         input[type="password"]:focus {
-            border-color: #f57c00; /* Bordo più scuro al focus */
-            outline: none; /* Rimuove il bordo predefinito al focus */
+            border-color: #f57c00; 
+            outline: none;
         }
 
         .login-button {
             background-color: #ffc107;
-            color: #333; /* Testo scuro */
+            color: #333; 
             padding: 12px 25px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-size: 1.1em;
             margin-bottom: 15px;
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Transizioni per hover ed effetto click */
+            transition: background-color 0.3s ease, transform 0.2s ease; 
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .login-button:hover {
             background-color: #f57c00;
-            transform: translateY(-2px); /* Leggero sollevamento al passaggio del mouse */
+            transform: translateY(-2px); 
         }
 
         .login-button:active {
-            transform: translateY(0); /* Ritorna alla posizione normale al click */
+            transform: translateY(0);
         }
 
         .register-link {
