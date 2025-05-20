@@ -1,11 +1,18 @@
+const cardContainer = document.getElementById("cardContainer");
+
 // Take the search parameter on the url
 const params = new URLSearchParams(window.location.search);
 const searchQuery = params.get("search");
 
 console.log("Hai cercato: ", searchQuery);
 
+// clear the localStorage
 localStorage.clear();
 
+/***
+ * Get the product list from src/data/products.json
+ * and put it in the localStorage
+ */
 async function getProductList() {
   let products = localStorage.getItem("products");
 
@@ -23,29 +30,44 @@ async function getProductList() {
   return products;
 }
 
+// Search in the products list
 getProductList()
   .then((pList) => {
     // cycle through the list of products
     pList.forEach((card) => {
+      // TODO change the condition to search all card that start with the search query
+      if (card.name.startWith(searchQuery)) {
+
+      }
+
       console.log(card);
       const cardElement = document.createElement("div");
-      cardElement.classList.add("cardElement");
+      cardElement.classList.add("card-market-item ");
 
-      const cardName = card.name;
-      const cardImageSrc = cardName.replace(" ", "_");
+      // resolve the name of the png in assets/images 
+      const cardImageSrc = card.name.replace(" ", "_");
 
       cardElement.innerHTML = `
-        <img class="cardImg" src="../assets/imge/${cardImageSrc}.png">
-        <div class="cardDetailsContainer">
-          <p class="cardName">${card.name}</p>
-          <p class="cardPrice">${card.price}</p>
-        </div>`;
+        <div class="col-12 col-lg-3 col-md-4 col-sm-6">
+          <div class="card d-flex">
+            <img
+              class="card-img-top"
+              src="../assets/images/${cardImageSrc}"
+              alt="Image 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">${card.name}</h5>
+              <p class="card-price">${card.price}</p>
+            </div>
+          </div>
+        </div>
+        `;
 
-      // append the element of the card 
-      document.getElementById("cardContainer").appendChild(cardElement);
+      // append the element of the card
+      cardContainer.appendChild(cardElement);
     });
-  })
-  // catch any error if they occurs
-  .catch((err) => {
+  }).catch((err) => {  // catch any error if they occurs
     console.error("Errore nella generazione:", err);
-  });
+  }
+);
+
