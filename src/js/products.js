@@ -49,7 +49,7 @@ getProductList()
             <img
               class="card-img-top"
               src="../assets/images/${cardImageSrc}"
-              alt="Image 1"
+              alt="${cardImageSrc}"
             />
             <div class="card-body">
               <h5 class="card-title">${card.name}</h5>

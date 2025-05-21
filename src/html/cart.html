@@ -6,14 +6,28 @@
     <title>CardMarket - Cart</title>
   </head>
   <body>
-    <header class="mx-1 my-1">
-      <div class="d-flex flex-row align-items-center justify-content-between">
-        <div id="container-logo">
-          <img src="../assets/icons/logo.svg" alt="Logo" />
-        </div>
-        </div>
-        <div id="container_account_icon">
-          <img src="../assets/icons/account_icon.svg" alt="Account Icon" />
+    <header id="header">
+      <div class="mx-1 my-1">
+        <div
+          id="header-container"
+          class="d-flex flex-row align-items-center justify-content-between"
+        >
+          <div id="container-logo">
+            <img src="../assets/icons/logo.svg" alt="Logo" />
+          </div>
+          <div id="container-searchbar">
+            <form id="search-form">
+              <input
+                type="text"
+                id="search-bar"
+                placeholder="Search for cards..."
+              />
+              <button id="search-button">Search</button>
+            </form>
+          </div>
+          <div id="container_account_icon">
+            <img src="../assets/icons/account_icon.svg" alt="Account Icon" />
+          </div>
         </div>
       </div>
     </header>
