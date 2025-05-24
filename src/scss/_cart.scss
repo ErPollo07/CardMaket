@@ -1,0 +1,153 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #4a90e2, #0c234b);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#header {
+  width: 100%;
+  background-color: #1a4db7; // colore più chiaro del blu scuro precedente
+  padding: 1.5rem 3rem; // padding più ampio per header più grande
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  margin: 0;
+  font-size: 1.25rem; // testo un po' più grande
+
+  #container-logo img {
+    height: 60px; // logo più grande
+  }
+
+  .d-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #container-searchbar {
+    form {
+      display: flex;
+
+      input#search-bar {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px 0 0 6px;
+        outline: none;
+        width: 200px;
+        max-width: 100%;
+      }
+
+      button#search-button {
+        background-color: #4a90e2;
+        border: none;
+        color: white;
+        font-weight: 700;
+        padding: 0 1.2rem;
+        border-radius: 0 6px 6px 0;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #3b75bf;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+  }
+}
+
+#empty-cart-message {
+  font-size: 2.5rem;
+  color: #98b8d9;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-grow: 1;
+}
+
+.cart-item {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 280px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+
+  .card-img-top {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 4px solid #4a90e2;
+  }
+
+  .card-body {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .card-price {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4a90e2;
+  }
+
+  .buy-button {
+    background-color: #4a90e2;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #3b75bf;
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+  }
+}
