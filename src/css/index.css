@@ -11896,6 +11896,14 @@ input[type=password] {
   transition: border-color 0.3s ease;
 }
 
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 25px auto;
+  animation: fadeIn 0.8s ease-in;
+}
+
 input[type=text]:focus,
 input[type=password]:focus {
   border-color: #1d2f6f;
@@ -11933,12 +11941,245 @@ input[type=password]:focus {
   text-decoration: underline;
 }
 
+body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #87bcde, #1d2f6f);
+  margin: 0;
+}
+
+.register-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 25px auto;
+  animation: fadeIn 0.8s ease-in;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+input[type=text],
+input[type=password] {
+  width: 280px;
+  padding: 12px;
+  border: 2px solid #87bcde;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+  border-color: #1d2f6f;
+  outline: none;
+}
+
+.register-button {
+  background-color: #87bcde;
+  color: #333;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.register-button:hover {
+  background-color: #1d2f6f;
+  color: #fff;
+  transform: translateY(-2px);
+}
+.register-button:active {
+  transform: translateY(0);
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 0.95em;
+  color: #333;
+}
+.login-link a {
+  color: #1d2f6f;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.login-link a:hover {
+  color: #87bcde;
+  text-decoration: underline;
+}
+
 .card-price {
   font-size: 1.25rem; /* Aumenta la dimensione del font per il prezzo */
   font-weight: bold; /* Rende il prezzo in grassetto */
   color: #28a745; /* Usa un verde per il prezzo, ma puoi cambiarlo a piacere */
   margin-top: 10px; /* Distanza tra il titolo e il prezzo */
   text-align: left; /* Allinea il prezzo a sinistra */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  background: linear-gradient(135deg, #4a90e2, #0c234b);
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#header {
+  width: 100%;
+  background-color: #1a4db7;
+  padding: 1.5rem 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  margin: 0;
+  font-size: 1.25rem;
+}
+#header #container-logo img {
+  height: 60px;
+}
+#header .d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#header #container-searchbar form {
+  display: flex;
+}
+#header #container-searchbar form input#search-bar {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  width: 200px;
+  max-width: 100%;
+}
+#header #container-searchbar form button#search-button {
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0 1.2rem;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+#header #container-searchbar form button#search-button:hover {
+  background-color: #3b75bf;
+}
+#header #container-searchbar form button#search-button:active {
+  transform: scale(0.98);
+}
+
+#empty-cart-message {
+  font-size: 2.5rem;
+  color: #98b8d9;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  flex-grow: 1;
+}
+
+.cart-item {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+.cart-item .card-img-top {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-bottom: 4px solid #4a90e2;
+}
+.cart-item .card-body {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cart-item .card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+}
+.cart-item .card-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4a90e2;
+}
+.cart-item .buy-button {
+  background-color: #4a90e2;
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+.cart-item .buy-button:hover {
+  background-color: #3b75bf;
+}
+.cart-item .buy-button:active {
+  transform: scale(0.98);
 }
 
 /*# sourceMappingURL=index.css.map */
