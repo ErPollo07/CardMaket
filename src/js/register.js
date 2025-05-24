@@ -1,21 +1,24 @@
 document.getElementById('registrationForm').addEventListener('submit', function (event) {
-  event.preventDefault(); // Prevent form submission
+  event.preventDefault();
 
-  const nickname = document.getElementById('nickname').value;
+  const nickname = document.getElementById('nickname').value.trim();
   const password = document.getElementById('password').value;
   const confirmPassword = document.getElementById('confirmPassword').value;
   const messageDiv = document.getElementById('message');
 
-  // Check if the passwords match
   if (password !== confirmPassword) {
-    messageDiv.textContent = "Passwords do not match";
+    messageDiv.textContent = "⚠️ The passwords do not match.";
     messageDiv.style.display = "block";
-  } else {
-    // If everything is OK
-    messageDiv.textContent = "Registration successful!";
-    messageDiv.style.display = "block";
-  }
+    messageDiv.style.color = "red";
 
-  // Reset the form
-  document.getElementById('registrationForm').reset();
+    // Reset solo i campi password
+    document.getElementById('password').value = '';
+    document.getElementById('confirmPassword').value = '';
+  } else {
+    messageDiv.textContent = "✅ Registration completed!";
+    messageDiv.style.display = "block";
+    messageDiv.style.color = "green";
+
+    window.location.href = "login.html";
+  }
 });
