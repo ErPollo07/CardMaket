@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <title>CardMarket - Registrazione</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CardMarket - Registrazione</title>
-  <link rel="stylesheet" href="../css/register.css" />
-</head>
+  <body>
+    <div class="register-container">
+      <img src="../assets/images/LOGO.png" alt="CardMarket Logo" class="logo" />
 
-<body>
-  <div class="register-container">
-    <img src="../assets/images/LOGO.png" alt="CardMarket Logo" class="logo" />
-
-    <form id="registrationForm">
-      <div class="input-group">
-        <input type="text" id="nickname" placeholder="Username" required />
+      <form id="registrationForm">
+        <div class="input-group">
+          <input type="text" id="nickname" placeholder="Username" required />
+        </div>
+        <div class="input-group">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Conferma Password"
+            required
+          />
+        </div>
+        <div>
+          <button type="submit" class="register-button">Register</button>
+        </div>
+      </form>
+      <div id="message" style="display: none; margin-top: 15px"></div>
+      <div class="login-link">
+        <p>Already have an Account? <a href="login.html">Log-in</a></p>
       </div>
-      <div class="input-group">
-        <input type="password" id="password" placeholder="Password" required />
-      </div>
-      <div class="input-group">
-        <input type="password" id="confirmPassword" placeholder="Conferma Password" required />
-      </div>
-      <div>
-        <button type="submit" class="register-button">Register</button>
-      </div>
-    </form>
-    <div id="message" style="display: none; margin-top: 15px;"></div>
-    <div class="login-link">
-      <p>Already have an Account? <a href="login.html">Log-in</a></p>
     </div>
-  </div>
-</body>
+  </body>
 
-<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../js/register.js"></script>
-
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../js/register.js"></script>
 </html>

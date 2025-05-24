@@ -1,5 +1,11 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #87bcde, #1d2f6f);
+  margin: 0;
+}
+
 @import 'variables';
 @import 'index';
 @import 'login';

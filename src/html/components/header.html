@@ -7,24 +7,44 @@
     <title>Document</title>
   </head>
   <body>
-    <header id="header">
-      <div id="header-container" class="mx-1 my-1">
-        <div class="d-flex flex-row align-items-center justify-content-between">
-          <div id="container-logo">
-            <img src="../assets/icons/logo.svg" alt="Logo" />
+    <header id="header"></header>
+      <div class="container-fluid py-2">
+        <div
+          class="d-flex flex-nowrap align-items-center justify-content-between gap-3"
+        >
+          <div id="container-logo" class="flex-shrink-0">
+            <img
+              src="../../assets/images/LOGO.png"
+              alt="Logo"
+              style="height: 40px; width: auto"
+            />
           </div>
-          <div id="container-searchbar">
-            <form id="search-form">
-              <input
-                type="text"
-                id="search-bar"
-                placeholder="Search for cards..."
-              />
-              <button id="search-button">Search</button>
-            </form>
-          </div>
-          <div id="container_account_icon">
-            <img src="../assets/icons/account_icon.svg" alt="Account Icon" />
+          <form
+            id="search-form"
+            class="d-flex flex-nowrap flex-grow-1 mx-3"
+            style="max-width: 600px"
+          >
+            <input
+              type="text"
+              id="search-bar"
+              class="form-control me-2"
+              placeholder="Search for cards..."
+              style="min-width: 0"
+            />
+            <button
+              id="search-button"
+              class="btn btn-outline-primary flex-shrink-0"
+              type="submit"
+            >
+              Search
+            </button>
+          </form>
+          <div id="container_account_icon" class="flex-shrink-0">
+            <img
+              src="../../assets/icons/account_icon.svg"
+              alt="Account Icon"
+              style="height: 32px; width: auto"
+            />
           </div>
         </div>
       </div>
