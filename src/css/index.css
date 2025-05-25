@@ -11870,6 +11870,12 @@ header {
 }
 header #container-logo img {
   height: 60px;
+  cursor: pointer;
+}
+header .d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 header #container-searchbar form {
   display: flex;
@@ -11884,12 +11890,11 @@ header #container-searchbar form input#search-bar {
   max-width: 100%;
 }
 header #container-searchbar form button#search-button {
-  height: fit-content;
-  background-color: #fff; /* #4a90e2 */
+  background-color: #4a90e2;
   border: none;
   color: white;
   font-weight: 700;
-  padding: 0.6rem 1r;
+  padding: 0 1.2rem;
   border-radius: 0 6px 6px 0;
   cursor: pointer;
   font-size: 1rem;
@@ -11901,8 +11906,79 @@ header #container-searchbar form button#search-button:hover {
 header #container-searchbar form button#search-button:active {
   transform: scale(0.98);
 }
+header .account-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+header .account-dropdown .account-icon {
+  display: block;
+  line-height: 1;
+}
+header .account-dropdown .account-icon img {
+  height: 32px;
+  width: auto;
+  border-radius: 50%;
+}
+header .account-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  top: calc(100% + 10px);
+  right: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+header .account-dropdown .dropdown-content.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+header .account-dropdown .dropdown-content p.username-display {
+  padding: 12px 16px;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+header .account-dropdown .dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+header .account-dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #1d2f6f;
+}
 
-.login-container {
+.login-page body,
+.login-page html {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
+}
+.login-page .login-container {
   background-color: #fff;
   padding: 40px;
   border-radius: 15px;
@@ -11982,9 +12058,6 @@ header #container-searchbar form button#search-button:active {
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
-.register-container {
-=======
 .register-page body.register-page,
 .register-page html {
   font-family: "Nunito", sans-serif;
@@ -11997,7 +12070,6 @@ header #container-searchbar form button#search-button:active {
   background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
 }
 .register-page .register-container {
->>>>>>> cdd3bde4d89ef989acd4151ca1441b3b32389360
   background-color: #fff;
   padding: 40px;
   border-radius: 15px;
@@ -12107,122 +12179,7 @@ html {
   flex-direction: column;
   min-height: 100vh;
 }
-<<<<<<< HEAD
-
-#empty-cart-message {
-=======
-.cart-page #header {
-  width: 100%;
-  background-color: #1a4db7;
-  padding: 1.5rem 3rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  margin: 0;
-  font-size: 1.25rem;
-}
-.cart-page #header #container-logo img {
-  height: 60px;
-  cursor: pointer;
-}
-.cart-page #header .d-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.cart-page #header #container-searchbar form {
-  display: flex;
-}
-.cart-page #header #container-searchbar form input#search-bar {
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 6px 0 0 6px;
-  outline: none;
-  width: 200px;
-  max-width: 100%;
-}
-.cart-page #header #container-searchbar form button#search-button {
-  background-color: #4a90e2;
-  border: none;
-  color: white;
-  font-weight: 700;
-  padding: 0 1.2rem;
-  border-radius: 0 6px 6px 0;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-.cart-page #header #container-searchbar form button#search-button:hover {
-  background-color: #3b75bf;
-}
-.cart-page #header #container-searchbar form button#search-button:active {
-  transform: scale(0.98);
-}
-.cart-page #header .account-dropdown {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-.cart-page #header .account-dropdown .account-icon {
-  display: block;
-  line-height: 1;
-}
-.cart-page #header .account-dropdown .account-icon img {
-  height: 32px;
-  width: auto;
-  border-radius: 50%;
-}
-.cart-page #header .account-dropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  min-width: 180px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-  top: calc(100% + 10px);
-  right: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.cart-page #header .account-dropdown .dropdown-content.show {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-.cart-page #header .account-dropdown .dropdown-content p.username-display {
-  padding: 12px 16px;
-  margin: 0;
-  color: #333;
-  font-weight: bold;
-  border-bottom: 1px solid #eee;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.cart-page #header .account-dropdown .dropdown-content a {
-  color: #333;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-.cart-page #header .account-dropdown .dropdown-content a:hover {
-  background-color: #f1f1f1;
-  color: #1d2f6f;
-}
 .cart-page #empty-cart-message {
->>>>>>> cdd3bde4d89ef989acd4151ca1441b3b32389360
   font-size: 2.5rem;
   color: #98b8d9;
   height: 300px;
