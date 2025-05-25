@@ -11852,12 +11852,22 @@ textarea.form-control-lg {
 }
 body {
   font-family: "Nunito", sans-serif;
-  min-height: 100vh;
   background: linear-gradient(135deg, #87bcde, #1d2f6f);
   margin: 0;
 }
 
-.login-container {
+.login-page body,
+.login-page html {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
+}
+.login-page .login-container {
   background-color: #fff;
   padding: 40px;
   border-radius: 15px;
@@ -11865,8 +11875,10 @@ body {
   text-align: center;
   position: relative;
   animation: fadeIn 0.5s ease-out;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -11877,37 +11889,33 @@ body {
     transform: translateY(0);
   }
 }
-.input-group {
-  margin-bottom: 25px;
-}
-
-input[type=text],
-input[type=password] {
-  width: 280px;
-  padding: 12px;
-  border: 2px solid #87bcde;
-  border-radius: 8px;
-  box-sizing: border-box;
-  margin-top: 8px;
-  font-size: 1em;
-  transition: border-color 0.3s ease;
-}
-
-.logo {
+.login-page .logo {
   width: 120px;
   height: auto;
   display: block;
   margin: 0 auto 25px auto;
   animation: fadeIn 0.8s ease-in;
 }
-
-input[type=text]:focus,
-input[type=password]:focus {
+.login-page .input-group {
+  margin-bottom: 25px;
+}
+.login-page input[type=text],
+.login-page input[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #87bcde;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1em;
+  margin-top: 8px;
+  transition: border-color 0.3s ease;
+}
+.login-page input[type=text]:focus,
+.login-page input[type=password]:focus {
   border-color: #1d2f6f;
   outline: none;
 }
-
-.login-button {
+.login-page .login-button {
   background-color: #87bcde;
   color: #333;
   padding: 12px 25px;
@@ -11918,42 +11926,50 @@ input[type=password]:focus {
   margin-bottom: 15px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
-.login-button:hover {
+.login-page .login-button:hover {
   background-color: #1d2f6f;
+  color: #fff;
   transform: translateY(-2px);
 }
-.login-button:active {
+.login-page .login-button:active {
   transform: translateY(0);
 }
-
-.register-link {
+.login-page .register-link {
   font-size: 1em;
   color: #1d2f6f;
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.register-link:hover {
+.login-page .register-link:hover {
   color: #87bcde;
   text-decoration: underline;
 }
 
-body {
+.register-page body.register-page,
+.register-page html {
   font-family: "Nunito", sans-serif;
-  display: flex;
-  background: linear-gradient(135deg, #87bcde, #1d2f6f);
   margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
 }
-
-.register-container {
+.register-page .register-container {
   background-color: #fff;
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   text-align: center;
+  position: relative;
   animation: fadeIn 0.5s ease-out;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -11964,36 +11980,33 @@ body {
     transform: translateY(0);
   }
 }
-.logo {
+.register-page .logo {
   width: 120px;
   height: auto;
   display: block;
   margin: 0 auto 25px auto;
   animation: fadeIn 0.8s ease-in;
 }
-
-.input-group {
+.register-page .input-group {
   margin-bottom: 25px;
 }
-
-input[type=text],
-input[type=password] {
-  width: 280px;
+.register-page input[type=text],
+.register-page input[type=password] {
+  width: 100%;
   padding: 12px;
   border: 2px solid #87bcde;
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 1em;
+  margin-top: 8px;
   transition: border-color 0.3s ease;
 }
-
-input[type=text]:focus,
-input[type=password]:focus {
+.register-page input[type=text]:focus,
+.register-page input[type=password]:focus {
   border-color: #1d2f6f;
   outline: none;
 }
-
-.register-button {
+.register-page .register-button {
   background-color: #87bcde;
   color: #333;
   padding: 12px 25px;
@@ -12004,28 +12017,28 @@ input[type=password]:focus {
   margin-bottom: 15px;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
-.register-button:hover {
+.register-page .register-button:hover {
   background-color: #1d2f6f;
   color: #fff;
   transform: translateY(-2px);
 }
-.register-button:active {
+.register-page .register-button:active {
   transform: translateY(0);
 }
-
-.login-link {
-  margin-top: 15px;
-  font-size: 0.95em;
-  color: #333;
-}
-.login-link a {
+.register-page .login-link {
+  font-size: 1em;
   color: #1d2f6f;
   text-decoration: none;
-  font-weight: bold;
   transition: color 0.3s ease;
 }
-.login-link a:hover {
+.register-page .login-link a {
+  color: #1d2f6f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.register-page .login-link a:hover {
   color: #87bcde;
   text-decoration: underline;
 }
@@ -12038,7 +12051,13 @@ input[type=password]:focus {
   text-align: left; /* Allinea il prezzo a sinistra */
 }
 
-html, body {
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.cart-page {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -12047,13 +12066,9 @@ html, body {
   color: white;
   display: flex;
   flex-direction: column;
-}
-
-body {
   min-height: 100vh;
 }
-
-#header {
+.cart-page #header {
   width: 100%;
   background-color: #1a4db7;
   padding: 1.5rem 3rem;
@@ -12065,18 +12080,19 @@ body {
   margin: 0;
   font-size: 1.25rem;
 }
-#header #container-logo img {
+.cart-page #header #container-logo img {
   height: 60px;
+  cursor: pointer;
 }
-#header .d-flex {
+.cart-page #header .d-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-#header #container-searchbar form {
+.cart-page #header #container-searchbar form {
   display: flex;
 }
-#header #container-searchbar form input#search-bar {
+.cart-page #header #container-searchbar form input#search-bar {
   padding: 0.6rem 1rem;
   font-size: 1rem;
   border: none;
@@ -12085,7 +12101,7 @@ body {
   width: 200px;
   max-width: 100%;
 }
-#header #container-searchbar form button#search-button {
+.cart-page #header #container-searchbar form button#search-button {
   background-color: #4a90e2;
   border: none;
   color: white;
@@ -12096,14 +12112,73 @@ body {
   font-size: 1rem;
   transition: background-color 0.3s ease;
 }
-#header #container-searchbar form button#search-button:hover {
+.cart-page #header #container-searchbar form button#search-button:hover {
   background-color: #3b75bf;
 }
-#header #container-searchbar form button#search-button:active {
+.cart-page #header #container-searchbar form button#search-button:active {
   transform: scale(0.98);
 }
-
-#empty-cart-message {
+.cart-page #header .account-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.cart-page #header .account-dropdown .account-icon {
+  display: block;
+  line-height: 1;
+}
+.cart-page #header .account-dropdown .account-icon img {
+  height: 32px;
+  width: auto;
+  border-radius: 50%;
+}
+.cart-page #header .account-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  top: calc(100% + 10px);
+  right: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.cart-page #header .account-dropdown .dropdown-content.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.cart-page #header .account-dropdown .dropdown-content p.username-display {
+  padding: 12px 16px;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cart-page #header .account-dropdown .dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.cart-page #header .account-dropdown .dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #1d2f6f;
+}
+.cart-page #empty-cart-message {
   font-size: 2.5rem;
   color: #98b8d9;
   height: 300px;
@@ -12112,8 +12187,7 @@ body {
   align-items: center;
   width: 100%;
 }
-
-#cart-items {
+.cart-page #cart-items {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -12123,8 +12197,7 @@ body {
   max-width: 1200px;
   flex-grow: 1;
 }
-
-.cart-item {
+.cart-page .cart-item {
   background-color: white;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -12134,30 +12207,30 @@ body {
   display: flex;
   flex-direction: column;
 }
-.cart-item .card-img-top {
+.cart-page .cart-item .card-img-top {
   width: 100%;
   height: 280px;
   object-fit: cover;
   border-bottom: 4px solid #4a90e2;
 }
-.cart-item .card-body {
+.cart-page .cart-item .card-body {
   padding: 1rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.cart-item .card-title {
+.cart-page .cart-item .card-title {
   font-weight: 700;
   font-size: 1.3rem;
   margin: 0 0 0.5rem 0;
 }
-.cart-item .card-price {
+.cart-page .cart-item .card-price {
   font-size: 1.2rem;
   font-weight: 600;
   color: #4a90e2;
 }
-.cart-item .buy-button {
+.cart-page .cart-item .buy-button {
   background-color: #4a90e2;
   border: none;
   color: white;
@@ -12169,10 +12242,10 @@ body {
   margin-top: 1rem;
   transition: background-color 0.3s ease;
 }
-.cart-item .buy-button:hover {
+.cart-page .cart-item .buy-button:hover {
   background-color: #3b75bf;
 }
-.cart-item .buy-button:active {
+.cart-page .cart-item .buy-button:active {
   transform: scale(0.98);
 }
 
