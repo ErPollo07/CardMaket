@@ -11967,16 +11967,21 @@ header .account-dropdown .dropdown-content a:hover {
   color: #1d2f6f;
 }
 
-.login-page body,
-.login-page html {
+.login-page {
+  /* Ensure html and body take full height and reset default browser styles */
+}
+.login-page html,
+.login-page body {
   font-family: "Nunito", sans-serif;
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  margin: 0; /* Explicitly remove default margin */
+  padding: 0; /* Explicitly remove default padding */
+  height: 100%; /* Ensure they take full viewport height */
+  width: 100%; /* Ensure they take full viewport width */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
+  overflow: auto; /* Allow scrolling if content exceeds viewport */
 }
 .login-page .login-container {
   background-color: #fff;
@@ -11986,9 +11991,10 @@ header .account-dropdown .dropdown-content a:hover {
   text-align: center;
   position: relative;
   animation: fadeIn 0.5s ease-out;
-  width: 100%;
+  width: 100%; /* Take full width of its flex item */
   max-width: 400px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin: auto; /* This can help in some cases, though flexbox should handle it */
 }
 @keyframes fadeIn {
   from {
@@ -12058,16 +12064,21 @@ header .account-dropdown .dropdown-content a:hover {
   text-decoration: underline;
 }
 
-.register-page body.register-page,
-.register-page html {
+.register-page {
+  /* Ensure html and body take full height and reset default browser styles */
+}
+.register-page html,
+.register-page body {
   font-family: "Nunito", sans-serif;
-  margin: 0;
-  padding: 0;
-  height: 100%;
+  margin: 0; /* Explicitly remove default margin */
+  padding: 0; /* Explicitly remove default padding */
+  height: 100%; /* Ensure they take full viewport height */
+  width: 100%; /* Ensure they take full viewport width */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
   background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
+  overflow: auto; /* Allow scrolling if content exceeds viewport */
 }
 .register-page .register-container {
   background-color: #fff;
@@ -12077,9 +12088,10 @@ header .account-dropdown .dropdown-content a:hover {
   text-align: center;
   position: relative;
   animation: fadeIn 0.5s ease-out;
-  width: 100%;
+  width: 100%; /* Take full width of its flex item */
   max-width: 400px;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin: auto; /* This can help in some cases, though flexbox should handle it */
 }
 @keyframes fadeIn {
   from {

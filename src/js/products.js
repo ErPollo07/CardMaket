@@ -72,3 +72,14 @@ getProductList()
     // catch any error if they occurs
     console.error("Errore nella generazione:", err);
   });
+
+$('.account-dropdown').on('click', function (event) {
+  event.stopPropagation();
+  $(this).find('.dropdown-content').toggleClass('show');
+});
+
+$(document).on('click', function (event) {
+  if (!$(event.target).closest('.account-dropdown').length) {
+    $('.dropdown-content').removeClass('show');
+  }
+});

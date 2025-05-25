@@ -24,21 +24,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     $('.dropdown-content .username-display').text('Ciao, ' + username + '!');
 
-    $('.account-dropdown').on('click', function(event) {
+    $('.account-dropdown').on('click', function (event) {
       event.stopPropagation();
       $(this).find('.dropdown-content').toggleClass('show');
     });
 
-    $(document).on('click', function(event) {
+    $(document).on('click', function (event) {
       if (!$(event.target).closest('.account-dropdown').length) {
         $('.dropdown-content').removeClass('show');
       }
     });
 
-    $('#logout-link').on('click', function(event) {
+    $('#logout-link').on('click', function (event) {
       event.preventDefault();
       alert('Effettuato il logout!');
       $('.dropdown-content').removeClass('show');
+      window.location.href = "login.html";
     });
   } else {
     console.warn("jQuery non è caricato. Le funzionalità del dropdown potrebbero non funzionare.");

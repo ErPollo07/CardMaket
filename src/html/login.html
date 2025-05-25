@@ -2,9 +2,13 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="../css/index.css" />
+
   <link rel="stylesheet" href="../css/login.css" />
   <title>CardMarket - Login</title>
 </head>
@@ -15,13 +19,14 @@
     <div class="logo-container"></div>
     <form id="login-format">
       <div class="input-group">
-        <input type="text" placeholder="Username" />
+        <input type="text" id="username" placeholder="Username" />
       </div>
       <div class="input-group">
-        <input type="password" placeholder="Password" />
+        <input type="password" id="password" placeholder="Password" />
       </div>
+      <div id="message" style="display: none; margin-top: 10px; font-weight: bold;"></div>
       <div id="login-button">
-        <button class="login-button">Login</button>
+        <button type="submit" class="login-button">Login</button>
       </div>
     </form>
     <div>
@@ -31,6 +36,6 @@
 </body>
 
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../js/register.js"></script>
+<script src="../js/login.js"></script>
 
 </html>
