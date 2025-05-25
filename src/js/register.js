@@ -11,7 +11,6 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     messageDiv.style.display = "block";
     messageDiv.style.color = "red";
 
-    // Reset solo i campi password
     document.getElementById('password').value = '';
     document.getElementById('confirmPassword').value = '';
   } else {
