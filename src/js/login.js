@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Recupera gli utenti dal localStorage
-    const users = JSON.parse(localStorage.getItem("users") || "[]");
     // Cerca l'utente con username e password corrispondenti
     const user = users.find(
       (u) => u.username === username && u.password === password

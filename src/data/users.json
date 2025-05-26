@@ -4,12 +4,24 @@
     "password": "admin",
     "cart": [
       {
-        "name": "test 1",
+        "name": "Lucario EX",
         "price": 10
       },
       {
-        "name": "test 2",
+        "name": "Dragonite Ex",
         "price": 20
+      },
+      {
+        "name": "Dragonite V",
+        "price": 10
+      },
+      {
+        "name": "Dragonite Ex",
+        "price": 20
+      },
+      {
+        "name": "Dragonite V",
+        "price": 10
       }
     ]
   }

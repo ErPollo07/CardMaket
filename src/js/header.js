@@ -1,3 +1,8 @@
+async function getUsers() {
+  const users = await fetch("../data/users.json");
+  return await users.json();
+}
+
 // Prendi il vero utente loggato dal localStorage
 const user = JSON.parse(localStorage.getItem("user"));
 const username = user ? user.username : "Ospite";
@@ -17,9 +22,24 @@ $(document).on("click", function (event) {
 
 $("#logout-link").on("click", function (event) {
   event.preventDefault();
-  // Rimuovi l'utente loggato dal localStorage
+  // Rimuovi solo l'utente loggato dal localStorage
   localStorage.removeItem("user");
   alert("Effettuato il logout!");
   $(".dropdown-content").removeClass("show");
-  window.location.href = "login.html";
+
+  // Assicurati che la variabile users sia presente dopo il logout
+  getUsers()
+    .then((data) => {
+      localStorage.setItem("users", JSON.stringify(data));
+      // window.location.href = "login.html";
+    })
+    .catch((error) => {
+      console.error("Error fetching users:", error);
+      // window.location.href = "login.html";
+    });
+  
+
+  console.log(localStorage);
+  
+  
 });

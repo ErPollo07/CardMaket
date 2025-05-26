@@ -15,10 +15,8 @@ if (!localStorage.getItem("user")) {
   window.location.href = "login.html";
 }
 
-
 const search_bar = $("#search-bar");
 const search_form = $("#search-form");
-const search_button = $("#search-button");
 
 async function getProducts() {
   const products = await fetch("../data/products.json");
@@ -36,6 +34,7 @@ getProducts()
   });
 
 search_form.on("submit", function (event) {
+  event.preventDefault();
   console.log(search_bar.val());
 
   const search_term = search_bar.val();

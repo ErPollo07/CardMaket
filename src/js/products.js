@@ -44,7 +44,13 @@ getProductList()
       } */
 
       const cardElement = document.createElement("div");
-      cardElement.classList.add("card-market-item", "col-12", "col-lg-3", "col-md-4", "col-sm-6");
+      cardElement.classList.add(
+        "card-market-item",
+        "col-12",
+        "col-lg-3",
+        "col-md-4",
+        "col-sm-6"
+      );
       // resolve the name of the png in assets/images
       const cardImageSrc = card.name.toLowerCase().replace(/ /g, "_");
 
@@ -72,14 +78,3 @@ getProductList()
     // catch any error if they occurs
     console.error("Errore nella generazione:", err);
   });
-
-$('.account-dropdown').on('click', function (event) {
-  event.stopPropagation();
-  $(this).find('.dropdown-content').toggleClass('show');
-});
-
-$(document).on('click', function (event) {
-  if (!$(event.target).closest('.account-dropdown').length) {
-    $('.dropdown-content').removeClass('show');
-  }
-});

@@ -1,156 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Market</title>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Card Market</title>
-  <link rel="stylesheet" href="../css/index.css" />
-</head>
-
-<body>
-  <header id="header">
-    <div id="header-container" class="mx-1 my-1">
-      <div class="d-flex flex-row align-items-center justify-content-between">
-        <div id="container-logo">
-          <img src="../assets/icons/logo.svg" alt="Logo" />
-        </div>
-        <div id="container-searchbar">
-          <form id="search-form">
-            <input type="text" id="search-bar" placeholder="Search for cards..." />
-            <button id="search-button">Search</button>
-          </form>
-        </div>
-        <div id="container_account_icon">
-          <img src="../assets/icons/account_icon.svg" alt="Account Icon" />
+  <body>
+    <header id="header">
+      <div id="header-container" class="mx-1 my-1">
+        <div class="d-flex flex-row align-items-center justify-content-between">
+          <div id="container-logo">
+            <img src="../assets/icons/logo.svg" alt="Logo" />
+          </div>
+          <div id="container-searchbar">
+            <form id="search-form">
+              <input
+                type="text"
+                id="search-bar"
+                placeholder="Search for cards..."
+              />
+              <button id="search-button">Search</button>
+            </form>
+          </div>
+          <div id="container_account_icon">
+            <img src="../assets/icons/account_icon.svg" alt="Account Icon" />
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <div id="login">
-    <div class="container d-flex flex-column justify-content-center">
-      <div class="star">★</div>
-      <form id="login-format">
-        <div class="input-group">
-          <input type="text" placeholder="Username" />
-        </div>
-        <div class="input-group">
-          <input type="password" placeholder="Password" />
-        </div>
-        <div id="login-button">
-          <button class="login-button">Login</button>
-        </div>
-        <div>
-          <a href="#" class="register-link">Registrati</a>
-        </div>
-      </form>
+    <div id="login">
+      <div class="container d-flex flex-column justify-content-center">
+        <div class="star">★</div>
+        <form id="login-format">
+          <div class="input-group">
+            <input type="text" placeholder="Username" />
+          </div>
+          <div class="input-group">
+            <input type="password" placeholder="Password" />
+          </div>
+          <div id="login-button">
+            <button class="login-button">Login</button>
+          </div>
+          <div>
+            <a href="#" class="register-link">Registrati</a>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <div id="register">
-    <div class="container d-flex flex-column justify-content-center">
-      <form id="registrationForm">
-        <input type="text" id="nickname" placeholder="Nickname" required /><br />
-        <input type="password" id="password" placeholder="Password" required />
-        <br />
-        <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
-        <br />
-        <button type="submit">Register</button>
-      </form>
+    <div id="register">
+      <div class="container d-flex flex-column justify-content-center">
+        <form id="registrationForm">
+          <input
+            type="text"
+            id="nickname"
+            placeholder="Nickname"
+            required
+          /><br />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <br />
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <br />
+          <button type="submit">Register</button>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <div id="products">
-    <div class="container">
-      <div class="row">
-        <!-- card 1 -->
-        <div class="card-market-item col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="card d-flex">
-            <img class="card-img-top" src="../assets/images/lucario_ex.png" alt="Image 1" />
-            <div class="card-body">
-              <h5 class="card-title">Card 2</h5>
-              <p class="card-price">999.37€</p>
+    <div id="products">
+      <div class="container">
+        <div class="row">
+          <!-- card 1 -->
+          <div class="card-market-item col-12 col-lg-3 col-md-4 col-sm-6">
+            <div class="card d-flex">
+              <img
+                class="card-img-top"
+                src="../assets/images/lucario_ex.png"
+                alt="Image 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card 2</h5>
+                <p class="card-price">999.37€</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="index">
-    <div id="content" class="container d-flex align-items-center justify-content-center">
-      <h1 id="title">Card Market</h1>
-      <div id="container-products"></div>
-    </div>
-  </div>
-
-  <div id="cart">
-    <!-- Message if cart is empty -->
-    <div id="empty-cart-message" class="d-flex align-items-center justify-content-center">
-      <h1>:( No item in cart</h1>
+    <div id="index">
+      <div
+        id="content"
+        class="container d-flex align-items-center justify-content-center"
+      >
+        <h1 id="title">Card Market</h1>
+        <div id="container-products"></div>
+      </div>
     </div>
 
-    <!-- container for cards in cart -->
-    <div id="card-items" class="container">
-      <div class="row">
-        <!-- card 1 -->
-        <div class="card-market-item col-12 col-lg-3 col-md-4 col-sm-6">
-          <div class="card d-flex">
-            <img class="card-img-top" src="../assets/images/lucario_ex.png" alt="Image 1" />
-            <div class="card-body">
-              <h5 class="card-title">Card 2</h5>
-              <p class="card-price">10.99€</p>
+    <div id="cart">
+      <!-- Message if cart is empty -->
+      <div
+        id="empty-cart-message"
+        class="d-flex align-items-center justify-content-center"
+      >
+        <h1>:( No item in cart</h1>
+      </div>
+
+      <!-- container for cards in cart -->
+      <div id="card-items" class="container">
+        <div class="row">
+          <!-- card 1 -->
+          <div class="card-market-item col-12 col-lg-3 col-md-4 col-sm-6">
+            <div class="card d-flex">
+              <img
+                class="card-img-top"
+                src="../assets/images/lucario_ex.png"
+                alt="Image 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card 2</h5>
+                <p class="card-price">10.99€</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <footer class="bg-dark text-white py-4 mt-5">
-    <div class="container">
-      <div class="row">
-        <!-- Colonna 1 -->
-        <div class="col-md-4">
-          <h5>Who we are</h5>
-          <p>A group of friends who like cards.</p>
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <!-- Colonna 1 -->
+          <div class="col-md-4">
+            <h5>Who we are</h5>
+            <p>A group of friends who like cards.</p>
+          </div>
+
+          <!-- Colonna 2 -->
+          <div class="col-md-4">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Products</a>
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Cart</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Colonna 3 -->
+          <div class="col-md-4">
+            <h5>Contact us</h5>
+            <p>Email: info.cardmarket@gmail.com</p>
+            <p>Tel: +39 351 551 7627</p>
+          </div>
         </div>
 
-        <!-- Colonna 2 -->
-        <div class="col-md-4">
-          <h5>Links</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#" class="text-white text-decoration-none">Home</a>
-            </li>
-            <li>
-              <a href="#" class="text-white text-decoration-none">Products</a>
-            </li>
-            <li>
-              <a href="#" class="text-white text-decoration-none">Cart</a>
-            </li>
-          </ul>
-        </div>
+        <hr class="bg-white" />
 
-        <!-- Colonna 3 -->
-        <div class="col-md-4">
-          <h5>Contact us</h5>
-          <p>Email: info.cardmarket@gmail.com</p>
-          <p>Tel: +39 351 551 7627</p>
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 cardmarket.com - All rights reserved.</p>
         </div>
       </div>
+    </footer>
+  </body>
 
-      <hr class="bg-white" />
-
-      <div class="text-center">
-        <p class="mb-0">&copy; 2025 cardmarket.com - All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-</body>
-
-<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../js/index.js"></script>
-
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/header.js"></script>
 </html>
