@@ -22,7 +22,6 @@ $(document).on("click", function (event) {
 
 $("#logout-link").on("click", function (event) {
   event.preventDefault();
-  // Remove only the logged-in user from localStorage
   localStorage.clear();
   alert("Effettuato il logout!");
   $(".dropdown-content").removeClass("show");
@@ -30,7 +29,6 @@ $("#logout-link").on("click", function (event) {
   // Make sure the users variable is present after logout
   getUsers()
     .then((data) => {
-      console.log(data);
       localStorage.setItem("users", JSON.stringify(data));
       window.location.href = "login.html";
     })

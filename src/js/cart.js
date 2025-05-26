@@ -59,3 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   console.log("User's cart:", cart);
 });
+
+document.getElementById("buy-cart-btn").addEventListener("mouseup", () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  user.cart = [];
+  localStorage.setItem("user", JSON.stringify(user));
+  alert("Cart purchased successfully! Thank you for your order.");
+  window.location.href = "index.html";
+});
