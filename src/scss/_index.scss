@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+
+#content {
+  /* Basic styling for the content wrapper if needed */
+  padding: 20px; /* Add some padding around the content */
+  text-align: center; /* Center align everything inside content by default */
+
+  #title {
+    font-family: 'Montserrat', sans-serif; /* A modern, clean sans-serif font */
+    font-size: 4rem; /* Larger and more prominent */
+    font-weight: 700; /* Bold */
+    color: #000000; /* A deep, professional blue-gray */
+    letter-spacing: 2px; /* Slightly increase spacing for readability */
+    margin-top: 50px; /* More space from the header */
+    margin-bottom: 30px; /* More space before products */
+    text-transform: uppercase; /* All caps for a strong statement */
+    position: relative; /* Needed for pseudo-elements */
+    display: inline-block; /* Helps with alignment and pseudo-elements */
+
+    /* Underline effect */
+    &::after {
+      content: '';
+      display: block;
+      width: 80px; /* Shorter underline */
+      height: 4px;
+      background-color: #3c3ce7; /* A contrasting accent color */
+      margin: 10px auto 0; /* Center the underline below the text */
+      border-radius: 2px; /* Slightly rounded corners */
+    }
+
+    /* Optional: Subtle gradient or shadow for a premium feel */
+    // text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    // background: linear-gradient(to right, #3498db, #2980b9);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+  }
+}

@@ -11967,21 +11967,75 @@ header .account-dropdown .dropdown-content a:hover {
   color: #1d2f6f;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+#content {
+  /* Basic styling for the content wrapper if needed */
+  padding: 20px; /* Add some padding around the content */
+  text-align: center; /* Center align everything inside content by default */
+}
+#content #title {
+  font-family: "Montserrat", sans-serif; /* A modern, clean sans-serif font */
+  font-size: 4rem; /* Larger and more prominent */
+  font-weight: 700; /* Bold */
+  color: #000000; /* A deep, professional blue-gray */
+  letter-spacing: 2px; /* Slightly increase spacing for readability */
+  margin-top: 50px; /* More space from the header */
+  margin-bottom: 30px; /* More space before products */
+  text-transform: uppercase; /* All caps for a strong statement */
+  position: relative; /* Needed for pseudo-elements */
+  display: inline-block; /* Helps with alignment and pseudo-elements */
+  /* Underline effect */
+  /* Optional: Subtle gradient or shadow for a premium feel */
+}
+#content #title::after {
+  content: "";
+  display: block;
+  width: 80px; /* Shorter underline */
+  height: 4px;
+  background-color: #3c3ce7; /* A contrasting accent color */
+  margin: 10px auto 0; /* Center the underline below the text */
+  border-radius: 2px; /* Slightly rounded corners */
+}
+
 .login-page {
   /* Ensure html and body take full height and reset default browser styles */
 }
 .login-page html,
 .login-page body {
   font-family: "Nunito", sans-serif;
-  margin: 0; /* Explicitly remove default margin */
-  padding: 0; /* Explicitly remove default padding */
-  height: 100%; /* Ensure they take full viewport height */
-  width: 100%; /* Ensure they take full viewport width */
+  margin: 0;
+  /* Explicitly remove default margin */
+  padding: 0;
+  /* Explicitly remove default padding */
+  height: 100%;
+  /* Ensure they take full viewport height */
+  width: 100%;
+  /* Ensure they take full viewport width */
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
   background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
-  overflow: auto; /* Allow scrolling if content exceeds viewport */
+  overflow: auto;
+  /* Allow scrolling if content exceeds viewport */
 }
 .login-page .login-container {
   background-color: #fff;
@@ -11991,10 +12045,13 @@ header .account-dropdown .dropdown-content a:hover {
   text-align: center;
   position: relative;
   animation: fadeIn 0.5s ease-out;
-  width: 100%; /* Take full width of its flex item */
+  width: 100%;
+  /* Take full width of its flex item */
   max-width: 400px;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  margin: auto; /* This can help in some cases, though flexbox should handle it */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  margin: auto;
+  /* This can help in some cases, though flexbox should handle it */
 }
 @keyframes fadeIn {
   from {
@@ -12070,15 +12127,22 @@ header .account-dropdown .dropdown-content a:hover {
 .register-page html,
 .register-page body {
   font-family: "Nunito", sans-serif;
-  margin: 0; /* Explicitly remove default margin */
-  padding: 0; /* Explicitly remove default padding */
-  height: 100%; /* Ensure they take full viewport height */
-  width: 100%; /* Ensure they take full viewport width */
+  margin: 0;
+  /* Explicitly remove default margin */
+  padding: 0;
+  /* Explicitly remove default padding */
+  height: 100%;
+  /* Ensure they take full viewport height */
+  width: 100%;
+  /* Ensure they take full viewport width */
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
   background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
-  overflow: auto; /* Allow scrolling if content exceeds viewport */
+  overflow: auto;
+  /* Allow scrolling if content exceeds viewport */
 }
 .register-page .register-container {
   background-color: #fff;
@@ -12088,10 +12152,13 @@ header .account-dropdown .dropdown-content a:hover {
   text-align: center;
   position: relative;
   animation: fadeIn 0.5s ease-out;
-  width: 100%; /* Take full width of its flex item */
+  width: 100%;
+  /* Take full width of its flex item */
   max-width: 400px;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  margin: auto; /* This can help in some cases, though flexbox should handle it */
+  box-sizing: border-box;
+  /* Include padding and border in the element's total width and height */
+  margin: auto;
+  /* This can help in some cases, though flexbox should handle it */
 }
 @keyframes fadeIn {
   from {
@@ -12167,15 +12234,38 @@ header .account-dropdown .dropdown-content a:hover {
 }
 
 .card-price {
-  font-size: 1.25rem; /* Aumenta la dimensione del font per il prezzo */
-  font-weight: bold; /* Rende il prezzo in grassetto */
-  color: #28a745; /* Usa un verde per il prezzo, ma puoi cambiarlo a piacere */
-  margin-top: 10px; /* Distanza tra il titolo e il prezzo */
-  text-align: left; /* Allinea il prezzo a sinistra */
+  font-size: 1.25rem;
+  /* Aumenta la dimensione del font per il prezzo */
+  font-weight: bold;
+  /* Rende il prezzo in grassetto */
+  color: #28a745;
+  /* Usa un verde per il prezzo, ma puoi cambiarlo a piacere */
+  margin-top: 10px;
+  /* Distanza tra il titolo e il prezzo */
+  text-align: left;
+  /* Allinea il prezzo a sinistra */
 }
 
 .card-container {
   margin-top: 1rem;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 html {
@@ -12264,6 +12354,25 @@ html {
 }
 .cart-page .cart-item .buy-button:active {
   transform: scale(0.98);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
 }
 
 /*# sourceMappingURL=index.css.map */
