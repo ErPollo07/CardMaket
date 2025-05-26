@@ -1,43 +1,57 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loginForm = document.getElementById('login-format');
-    const usernameInput = document.getElementById('username'); // Now using ID
-    const passwordInput = document.getElementById('password'); // Now using ID
-    const messageDiv = document.getElementById('message'); // Get reference to the message div
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("login-format");
+  const usernameInput = document.getElementById("username");
+  const passwordInput = document.getElementById("password");
+  const messageDiv = document.getElementById("message");
 
-    loginForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value.trim();
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
 
-        // Hide any previous messages
-        messageDiv.style.display = 'none';
-        messageDiv.textContent = '';
+    messageDiv.style.display = "none";
+    messageDiv.textContent = "";
 
-        if (username === '') {
-            messageDiv.textContent = "⚠️ Please enter your username.";
-            messageDiv.style.display = 'block';
-            messageDiv.style.color = 'red';
-            usernameInput.focus();
-            return; // Stop if validation fails
-        }
+    if (username === "") {
+      messageDiv.textContent = "⚠️ Please enter your username.";
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
+      usernameInput.focus();
+      return;
+    }
 
-        if (password === '') {
-            messageDiv.textContent = "⚠️ Please enter your password.";
-            messageDiv.style.display = 'block';
-            messageDiv.style.color = 'red';
-            passwordInput.focus();
-            return; // Stop if validation fails
-        }
+    if (password === "") {
+      messageDiv.textContent = "⚠️ Please enter your password.";
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
+      passwordInput.focus();
+      return;
+    }
 
-        // If both fields are filled (in a real app, you'd send to server)
-        messageDiv.textContent = "✅ Login successful!";
-        messageDiv.style.display = 'block';
-        messageDiv.style.color = 'green';
+    // Recupera gli utenti dal localStorage
+    const users = JSON.parse(localStorage.getItem("users") || "[]");
+    // Cerca l'utente con username e password corrispondenti
+    const user = users.find(
+      (u) => u.username === username && u.password === password
+    );
 
-        // Simulate a small delay before redirecting for the user to see the success message
-        setTimeout(() => {
-            window.location.href = "products.html";
-        }, 1000); // Redirect after 1 second
-    });
+    if (!user) {
+      messageDiv.textContent = "❌ Invalid username or password.";
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
+      return;
+    }
+
+    // Salva l'utente loggato nel localStorage
+    localStorage.setItem("user", JSON.stringify(user));
+
+    messageDiv.textContent = "✅ Login successful!";
+    messageDiv.style.display = "block";
+    messageDiv.style.color = "green";
+
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 1000);
+  });
 });

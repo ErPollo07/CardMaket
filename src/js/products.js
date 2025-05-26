@@ -1,4 +1,4 @@
-const cardContainer = document.getElementById("cardContainer");
+const cardContainer = document.getElementById("card-row-container");
 
 // Take the search parameter on the url
 const params = new URLSearchParams(window.location.search);
