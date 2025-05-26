@@ -1,10 +1,10 @@
 const cardContainer = document.getElementById("card-row-container");
 
-// Take the search parameter on the url
+// Take the search parameter from the url
 const params = new URLSearchParams(window.location.search);
 const searchQuery = params.get("search");
 
-console.log("Hai cercato: ", searchQuery);
+console.log("You searched for: ", searchQuery);
 
 /***
  * Get the product list from src/data/products.json
@@ -20,7 +20,7 @@ async function getProductList() {
     return JSON.parse(products);
   }
 
-  // fletch the file
+  // fetch the file
   const res = await fetch("../data/products.json");
   console.log(res);
 
@@ -28,7 +28,7 @@ async function getProductList() {
   products = await res.json();
   console.log(products);
 
-  // put the json data as string in the locale storage
+  // put the json data as string in the local storage
   localStorage.setItem("products", JSON.stringify(products));
 
   return products;
@@ -75,6 +75,6 @@ getProductList()
     });
   })
   .catch((err) => {
-    // catch any error if they occurs
-    console.error("Errore nella generazione:", err);
+    // catch any error if it occurs
+    console.error("Error generating:", err);
   });

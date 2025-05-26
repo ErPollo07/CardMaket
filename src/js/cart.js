@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
   } else {
-    // put in the content div the container for all the cards
+    // Put in the content div the container for all the cards
     contentDiv.innerHTML = `
       <div class="container card-container">
         <div class="row" id="card-row-container"></div>
       </div>
     `;
 
-    // put the cards in the container
+    // Put the cards in the container
     cart.forEach((card) => {
       const cardElement = document.createElement("div");
       cardElement.classList.add(
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "col-sm-6",
         "mb-5"
       );
-      // resolve the name of the png in assets/images
+      // Resolve the name of the png in assets/images
       const cardImageSrc = card.name.toLowerCase().replace(/ /g, "_");
 
       cardElement.innerHTML = `
@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `;
 
-      // append the element of the card
+      // Append the element of the card
       document.getElementById("card-row-container").appendChild(cardElement);
     });
   }
-  console.log("Carrello dell'utente:", cart);
+  console.log("User's cart:", cart);
 });

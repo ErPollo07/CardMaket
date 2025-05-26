@@ -3,15 +3,17 @@ async function getUsers() {
   return await users.json();
 }
 
-getUsers().then((data) => {
-  localStorage.setItem("users", JSON.stringify(data));
-}).catch((error) => {
-  console.error("Error fetching users:", error);
-});
+getUsers()
+  .then((data) => {
+    localStorage.setItem("users", JSON.stringify(data));
+  })
+  .catch((error) => {
+    console.error("Error fetching users:", error);
+  });
 
-// check if the user is logged in
+// Check if the user is logged in
 if (!localStorage.getItem("user")) {
-  // if not, redirect to the login page
+  // If not, redirect to the login page
   window.location.href = "login.html";
 }
 

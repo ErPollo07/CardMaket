@@ -29,7 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Cerca l'utente con username e password corrispondenti
+    // Get the users from localStorage
+    const users = JSON.parse(localStorage.getItem("users"));
+
+    // Search for the user with matching username and password
     const user = users.find(
       (u) => u.username === username && u.password === password
     );
@@ -41,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Salva l'utente loggato nel localStorage
+    // Save the logged-in user in localStorage
     localStorage.setItem("user", JSON.stringify(user));
 
     messageDiv.textContent = "✅ Login successful!";
