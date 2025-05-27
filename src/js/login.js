@@ -1,4 +1,20 @@
+async function getUsers() {
+  const users = await fetch("../data/users.json");
+  return await users.json();
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  if (!localStorage.getItem("users")) {
+    // If users are not in localStorage, fetch them and store
+    getUsers()
+      .then((data) => {
+        localStorage.setItem("users", JSON.stringify(data));
+      })
+      .catch((error) => {
+        console.error("Error fetching users:", error);
+      });
+  }
+
   const loginForm = document.getElementById("login-format");
   const usernameInput = document.getElementById("username");
   const passwordInput = document.getElementById("password");

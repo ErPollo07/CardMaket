@@ -1,3 +1,8 @@
+async function getUsers() {
+  const users = await fetch("../data/users.json");
+  return await users.json();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const headerDiv = document.getElementById("header");
 
@@ -30,40 +35,55 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
   `;
-});
 
 
-// Get the real logged-in user from localStorage
-const user = JSON.parse(localStorage.getItem("user"));
-const username = user.username;
 
-$(".dropdown-content .username-display").text("Ciao, " + username + "!");
+  // Get the real logged-in user from localStorage
+  const user = JSON.parse(localStorage.getItem("user"));
+  const username = user.username;
 
-$(".account-dropdown").on("click", function (event) {
-  event.stopPropagation();
-  $(this).find(".dropdown-content").toggleClass("show");
-});
-
-$(document).on("click", function (event) {
-  if (!$(event.target).closest(".account-dropdown").length) {
-    $(".dropdown-content").removeClass("show");
-  }
-});
-
-$("#logout-link").on("click", function (event) {
-  event.preventDefault();
-  localStorage.clear();
-  alert("Effettuato il logout!");
-  $(".dropdown-content").removeClass("show");
-
-  // Make sure the users variable is present after logout
-  getUsers()
-    .then((data) => {
-      localStorage.setItem("users", JSON.stringify(data));
-      window.location.href = "login.html";
-    })
-    .catch((error) => {
-      console.error("Error fetching users:", error);
-      window.location.href = "login.html";
+  // Aggiorna il nome utente
+  document
+    .querySelectorAll(".dropdown-content .username-display")
+    .forEach((el) => {
+      el.textContent = "Ciao, " + username + "!";
     });
+
+  // Dropdown toggle
+  document.querySelectorAll(".account-dropdown").forEach((dropdown) => {
+    dropdown.addEventListener("click", function (event) {
+      event.stopPropagation();
+      this.querySelector(".dropdown-content").classList.toggle("show");
+    });
+  });
+
+  // Chiudi dropdown cliccando fuori
+  document.addEventListener("click", function (event) {
+    document.querySelectorAll(".dropdown-content").forEach((content) => {
+      content.classList.remove("show");
+    });
+  });
+
+  // Logout
+  const logoutLink = document.getElementById("logout-link");
+  if (logoutLink) {
+    logoutLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      localStorage.clear();
+      alert("Effettuato il logout!");
+      document.querySelectorAll(".dropdown-content").forEach((content) => {
+        content.classList.remove("show");
+      });
+      // Make sure the users variable is present after logout
+      getUsers()
+        .then((data) => {
+          localStorage.setItem("users", JSON.stringify(data));
+          window.location.href = "login.html";
+        })
+        .catch((error) => {
+          console.error("Error fetching users:", error);
+          window.location.href = "login.html";
+        });
+    });
+  }
 });
