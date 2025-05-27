@@ -11850,16 +11850,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  font-family: "Nunito", sans-serif;
-  background: linear-gradient(135deg, #87bcde, #1d2f6f);
-  margin: 0;
-}
-
 header {
   width: 100%;
   background-color: #1a4db7;
-  padding: 1.5rem 3rem;
+  padding: 0rem 3rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
@@ -11901,7 +11895,7 @@ header #container-searchbar form button#search-button {
   transition: background-color 0.3s ease;
 }
 header #container-searchbar form button#search-button:hover {
-  background-color: #3b75bf;
+  background-color: rgb(34.3857142857, 117.3857142857, 214.6142857143);
 }
 header #container-searchbar form button#search-button:active {
   transform: scale(0.98);
@@ -11964,10 +11958,11 @@ header .account-dropdown .dropdown-content a {
 }
 header .account-dropdown .dropdown-content a:hover {
   background-color: #f1f1f1;
-  color: #1d2f6f;
+  color: #1a4db7;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -11987,31 +11982,37 @@ body {
 
 #content {
   /* Basic styling for the content wrapper if needed */
-  padding: 20px; /* Add some padding around the content */
-  text-align: center; /* Center align everything inside content by default */
+  padding: 20px;
+  /* Add some padding around the content */
+  text-align: center;
+  /* Center align everything inside content by default */
 }
 #content #title {
-  font-family: "Montserrat", sans-serif; /* A modern, clean sans-serif font */
-  font-size: 4rem; /* Larger and more prominent */
-  font-weight: 700; /* Bold */
-  color: #000000; /* A deep, professional blue-gray */
-  letter-spacing: 2px; /* Slightly increase spacing for readability */
-  margin-top: 50px; /* More space from the header */
-  margin-bottom: 30px; /* More space before products */
-  text-transform: uppercase; /* All caps for a strong statement */
-  position: relative; /* Needed for pseudo-elements */
-  display: inline-block; /* Helps with alignment and pseudo-elements */
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  /* Bold */
+  color: #000;
+  letter-spacing: 2px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  position: relative;
+  /* Needed for pseudo-elements */
+  display: inline-block;
   /* Underline effect */
-  /* Optional: Subtle gradient or shadow for a premium feel */
 }
 #content #title::after {
   content: "";
   display: block;
-  width: 80px; /* Shorter underline */
+  width: 80px;
+  /* Shorter underline */
   height: 4px;
-  background-color: #3c3ce7; /* A contrasting accent color */
-  margin: 10px auto 0; /* Center the underline below the text */
-  border-radius: 2px; /* Slightly rounded corners */
+  background-color: #3c3ce7;
+  margin: 10px auto 0;
+  /* Center the underline below the text */
+  border-radius: 2px;
+  /* Slightly rounded corners */
 }
 
 .login-page {
@@ -12033,7 +12034,7 @@ body {
   /* Center horizontally */
   align-items: center;
   /* Center vertically */
-  background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
+  background: #4a90e2;
   overflow: auto;
   /* Allow scrolling if content exceeds viewport */
 }
@@ -12077,7 +12078,7 @@ body {
 .login-page input[type=password] {
   width: 100%;
   padding: 12px;
-  border: 2px solid #87bcde;
+  border: 2px solid #4a90e2;
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 1em;
@@ -12086,11 +12087,11 @@ body {
 }
 .login-page input[type=text]:focus,
 .login-page input[type=password]:focus {
-  border-color: #1d2f6f;
+  border-color: #1a4db7;
   outline: none;
 }
 .login-page .login-button {
-  background-color: #87bcde;
+  background-color: #4a90e2;
   color: #333;
   padding: 12px 25px;
   border: none;
@@ -12103,7 +12104,7 @@ body {
   width: 100%;
 }
 .login-page .login-button:hover {
-  background-color: #1d2f6f;
+  background-color: #1a4db7;
   color: #fff;
   transform: translateY(-2px);
 }
@@ -12112,12 +12113,12 @@ body {
 }
 .login-page .register-link {
   font-size: 1em;
-  color: #1d2f6f;
+  color: #1a4db7;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .login-page .register-link:hover {
-  color: #87bcde;
+  color: #4a90e2;
   text-decoration: underline;
 }
 
@@ -12140,7 +12141,7 @@ body {
   /* Center horizontally */
   align-items: center;
   /* Center vertically */
-  background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
+  background: #4a90e2;
   overflow: auto;
   /* Allow scrolling if content exceeds viewport */
 }
@@ -12184,7 +12185,7 @@ body {
 .register-page input[type=password] {
   width: 100%;
   padding: 12px;
-  border: 2px solid #87bcde;
+  border: 2px solid #4a90e2;
   border-radius: 8px;
   box-sizing: border-box;
   font-size: 1em;
@@ -12193,11 +12194,11 @@ body {
 }
 .register-page input[type=text]:focus,
 .register-page input[type=password]:focus {
-  border-color: #1d2f6f;
+  border-color: #1a4db7;
   outline: none;
 }
 .register-page .register-button {
-  background-color: #87bcde;
+  background-color: #4a90e2;
   color: #333;
   padding: 12px 25px;
   border: none;
@@ -12210,7 +12211,7 @@ body {
   width: 100%;
 }
 .register-page .register-button:hover {
-  background-color: #1d2f6f;
+  background-color: #1a4db7;
   color: #fff;
   transform: translateY(-2px);
 }
@@ -12219,17 +12220,17 @@ body {
 }
 .register-page .login-link {
   font-size: 1em;
-  color: #1d2f6f;
+  color: #1a4db7;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .register-page .login-link a {
-  color: #1d2f6f;
+  color: #1a4db7;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .register-page .login-link a:hover {
-  color: #87bcde;
+  color: #4a90e2;
   text-decoration: underline;
 }
 
@@ -12250,7 +12251,8 @@ body {
   margin-top: 1rem;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -12279,8 +12281,8 @@ html {
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
-  background: linear-gradient(135deg, #4a90e2, #0c234b);
-  color: white;
+  background: #4a90e2;
+  color: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -12305,7 +12307,7 @@ html {
   flex-grow: 1;
 }
 .cart-page .cart-item {
-  background-color: white;
+  background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -12350,7 +12352,7 @@ html {
   transition: background-color 0.3s ease;
 }
 .cart-page .cart-item .buy-button:hover {
-  background-color: #3b75bf;
+  background-color: rgb(34.3857142857, 117.3857142857, 214.6142857143);
 }
 .cart-page .cart-item .buy-button:active {
   transform: scale(0.98);
@@ -12373,6 +12375,52 @@ body {
 
 .footer {
   flex-shrink: 0;
+}
+
+#footer {
+  background-color: #343a40;
+  color: #fff;
+  padding: 2rem 0;
+  margin-top: 5rem;
+}
+#footer .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+#footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#footer .col {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+#footer h5, #footer .h5 {
+  margin-bottom: 1rem;
+}
+#footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+#footer a {
+  color: #fff;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: #ccc;
+}
+#footer hr {
+  border-color: #fff;
+}
+#footer .text-center {
+  text-align: center;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: #fff;
+  margin: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

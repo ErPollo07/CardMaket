@@ -1,9 +1,22 @@
+// Palette principale
+$primary: #1a4db7;
+$primary-light: #4a90e2;
+$primary-dark: #0c234b;
+$accent: #3c3ce7;
+$success: #28a745;
+$gray-dark: #343a40;
+$gray: #333;
+$gray-light: #f1f1f1;
+$background: #fff;
+$text: #000;
+$text-light: #fff;
+$text-secondary: #98b8d9;
+$border: #eee;
 
-
-/* footer */
-$footer-bg-color: #343a40;
-$footer-text-color: white;
+// Footer
+$footer-bg-color: $gray-dark;
+$footer-text-color: $text-light;
 $footer-padding: 2rem 0;
 $footer-margin-top: 5rem;
-$footer-link-color: white;
+$footer-link-color: $text-light;
 $footer-link-hover-color: #ccc;

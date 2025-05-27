@@ -17,7 +17,7 @@
     /* Center horizontally */
     align-items: center;
     /* Center vertically */
-    background: linear-gradient(135deg, #87bcde 0%, #4a74a5 50%, #1d2f6f 100%);
+    background: $primary-light;
     overflow: auto;
     /* Allow scrolling if content exceeds viewport */
   }
@@ -67,7 +67,7 @@
   input[type="password"] {
     width: 100%;
     padding: 12px;
-    border: 2px solid #87bcde;
+    border: 2px solid $primary-light;
     border-radius: 8px;
     box-sizing: border-box;
     font-size: 1em;
@@ -77,13 +77,13 @@
 
   input[type="text"]:focus,
   input[type="password"]:focus {
-    border-color: #1d2f6f;
+    border-color: $primary;
     outline: none;
   }
 
   .register-button {
-    background-color: #87bcde;
-    color: #333;
+    background-color: $primary-light;
+    color: $gray;
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
@@ -96,8 +96,8 @@
   }
 
   .register-button:hover {
-    background-color: #1d2f6f;
-    color: #fff;
+    background-color: $primary;
+    color: $text-light;
     transform: translateY(-2px);
   }
 
@@ -107,19 +107,19 @@
 
   .login-link {
     font-size: 1em;
-    color: #1d2f6f;
+    color: $primary;
     text-decoration: none;
     transition: color 0.3s ease;
   }
 
   .login-link a {
-    color: #1d2f6f;
+    color: $primary;
     text-decoration: none;
     transition: color 0.3s ease;
   }
 
   .login-link a:hover {
-    color: #87bcde;
+    color: $primary-light;
     text-decoration: underline;
   }
 }
