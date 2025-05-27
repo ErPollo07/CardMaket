@@ -19,16 +19,16 @@ body {
   text-align: center; /* Center align everything inside content by default */
 
   #title {
-    font-family: 'Montserrat', sans-serif; /* A modern, clean sans-serif font */
-    font-size: 4rem; /* Larger and more prominent */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
     font-weight: 700; /* Bold */
-    color: #000000; /* A deep, professional blue-gray */
-    letter-spacing: 2px; /* Slightly increase spacing for readability */
-    margin-top: 50px; /* More space from the header */
-    margin-bottom: 30px; /* More space before products */
-    text-transform: uppercase; /* All caps for a strong statement */
+    color: #000000;
+    letter-spacing: 2px; 
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
     position: relative; /* Needed for pseudo-elements */
-    display: inline-block; /* Helps with alignment and pseudo-elements */
+    display: inline-block;
 
     /* Underline effect */
     &::after {
@@ -40,11 +40,5 @@ body {
       margin: 10px auto 0; /* Center the underline below the text */
       border-radius: 2px; /* Slightly rounded corners */
     }
-
-    /* Optional: Subtle gradient or shadow for a premium feel */
-    // text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
-    // background: linear-gradient(to right, #3498db, #2980b9);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
   }
 }
