@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const cardImageSrc = card.name.toLowerCase().replace(/ /g, "_");
 
       cardElement.innerHTML = `
-          <div class="card d-flex">
+          <div class="card">
             <img
               class="card-img-top"
               src="../assets/images/${cardImageSrc}.png"

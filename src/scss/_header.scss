@@ -1,17 +1,17 @@
 header {
   width: 100%;
   background-color: $primary;
-  padding: 0rem 3rem;
+  padding: 0 2vw;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
   margin: 0;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
 
   #container-logo img {
-    height: 60px;
+    height: clamp(40px, 8vw, 60px);
     cursor: pointer;
   }
 
@@ -31,7 +31,7 @@ header {
         border: none;
         border-radius: 6px 0 0 6px;
         outline: none;
-        width: 200px;
+        width: clamp(120px, 30vw, 200px);
         max-width: 100%;
       }
 

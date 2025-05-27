@@ -11853,17 +11853,17 @@ textarea.form-control-lg {
 header {
   width: 100%;
   background-color: #1a4db7;
-  padding: 0rem 3rem;
+  padding: 0 2vw;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
   margin: 0;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
 }
 header #container-logo img {
-  height: 60px;
+  height: clamp(40px, 8vw, 60px);
   cursor: pointer;
 }
 header .d-flex {
@@ -11880,7 +11880,7 @@ header #container-searchbar form input#search-bar {
   border: none;
   border-radius: 6px 0 0 6px;
   outline: none;
-  width: 200px;
+  width: clamp(120px, 30vw, 200px);
   max-width: 100%;
 }
 header #container-searchbar form button#search-button {
@@ -11982,14 +11982,15 @@ body {
 
 #content {
   /* Basic styling for the content wrapper if needed */
-  padding: 20px;
+  padding: 2vw;
   /* Add some padding around the content */
   text-align: center;
   /* Center align everything inside content by default */
 }
 #content #title {
   font-family: "Montserrat", sans-serif;
-  font-size: 4rem;
+  font-size: clamp(2rem, 6vw, 4rem);
+  /* Titolo responsive */
   font-weight: 700;
   /* Bold */
   color: #000;
@@ -12013,6 +12014,77 @@ body {
   /* Center the underline below the text */
   border-radius: 2px;
   /* Slightly rounded corners */
+}
+
+.card-item {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 5/7;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-bottom: 4px solid #4a90e2;
+}
+
+.cmcard-body {
+  padding: 1.2rem 0.5rem 0.8rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  background: #fff;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 0.2rem 0;
+  text-align: left;
+  width: 100%;
+}
+
+.card-price-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #28a745;
+  text-align: left;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-add-to-cart {
+  font-size: 0.95rem;
+  padding: 0.3rem 0.8rem;
+  margin-left: 0.5rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+  display: inline-block;
+  vertical-align: middle;
+}
+.btn-add-to-cart:hover {
+  background-color: rgb(30.1449275362, 125.8550724638, 52);
 }
 
 .login-page {
@@ -12249,6 +12321,20 @@ body {
 
 .card-container {
   margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 220px;
+  max-width: 300px;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Responsive card layout */
 }
 
 html,
@@ -12270,6 +12356,26 @@ body {
   flex-shrink: 0;
 }
 
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 5/7;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  /* Immagini sempre proporzionate, responsive e tagliate se necessario */
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .card {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
 html {
   height: 100%;
   margin: 0;
@@ -12299,47 +12405,14 @@ html {
 .cart-page #cart-items {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 2rem;
   justify-content: center;
   width: 100%;
   max-width: 1200px;
   flex-grow: 1;
 }
-.cart-page .cart-item {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 280px;
-  color: #333;
-  display: flex;
-  flex-direction: column;
-}
-.cart-page .cart-item .card-img-top {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-  border-bottom: 4px solid #4a90e2;
-}
-.cart-page .cart-item .card-body {
-  padding: 1rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.cart-page .cart-item .card-title {
-  font-weight: 700;
-  font-size: 1.3rem;
-  margin: 0 0 0.5rem 0;
-}
-.cart-page .cart-item .card-price {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #4a90e2;
-}
-.cart-page .cart-item .buy-button {
+.cart-page .buy-button {
   background-color: #4a90e2;
   border: none;
   color: white;
@@ -12351,10 +12424,10 @@ html {
   margin-top: 1rem;
   transition: background-color 0.3s ease;
 }
-.cart-page .cart-item .buy-button:hover {
+.cart-page .buy-button:hover {
   background-color: rgb(34.3857142857, 117.3857142857, 214.6142857143);
 }
-.cart-page .cart-item .buy-button:active {
+.cart-page .buy-button:active {
   transform: scale(0.98);
 }
 
@@ -12377,6 +12450,16 @@ body {
   flex-shrink: 0;
 }
 
+@media (max-width: 600px) {
+  .cart-item {
+    max-width: 100%;
+    min-width: 0;
+  }
+  #cart-items {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 #footer {
   background-color: #343a40;
   color: #fff;

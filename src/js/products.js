@@ -57,7 +57,7 @@ getProductList()
       console.log(cardImageSrc);
 
       cardElement.innerHTML = `
-          <div class="card d-flex">
+          <div class="card">
             <img
               class="card-img-top"
               src="../assets/images/${cardImageSrc}.png"

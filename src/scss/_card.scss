@@ -1,0 +1,71 @@
+.card-item {
+  background: $background;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 5/7;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-bottom: 4px solid $primary-light;
+}
+
+.cm-card-body {
+  padding: 1.2rem 0.5rem 0.8rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  background: $background;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 0.2rem 0;
+  text-align: left;
+  width: 100%;
+}
+
+.card-price-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: $success;
+  text-align: left;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-add-to-cart {
+  font-size: 0.95rem;
+  padding: 0.3rem 0.8rem;
+  margin-left: 0.5rem;
+  background-color: $success;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+  display: inline-block;
+  vertical-align: middle;
+
+  &:hover {
+    background-color: darken($success, 10%);
+  }
+}

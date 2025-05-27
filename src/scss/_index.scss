@@ -19,14 +19,15 @@ body {
 
 #content {
   /* Basic styling for the content wrapper if needed */
-  padding: 20px;
+  padding: 2vw;
   /* Add some padding around the content */
   text-align: center;
   /* Center align everything inside content by default */
 
   #title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-size: clamp(2rem, 6vw, 4rem);
+    /* Titolo responsive */
     font-weight: 700;
     /* Bold */
     color: $text;

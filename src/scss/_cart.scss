@@ -29,7 +29,7 @@ html {
   #cart-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 2rem;
     justify-content: center;
     width: 100%;
@@ -37,62 +37,24 @@ html {
     flex-grow: 1;
   }
 
-  .cart-item {
-    background-color: $background;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 280px;
-    color: $gray;
-    display: flex;
-    flex-direction: column;
+  .buy-button {
+    background-color: $primary-light;
+    border: none;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
 
-    .card-img-top {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-bottom: 4px solid $primary-light;
+    &:hover {
+      background-color: darken($primary-light, 10%);
     }
 
-    .card-body {
-      padding: 1rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .card-title {
-      font-weight: 700;
-      font-size: 1.3rem;
-      margin: 0 0 0.5rem 0;
-    }
-
-    .card-price {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: $primary-light;
-    }
-
-    .buy-button {
-      background-color: $primary-light;
-      border: none;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      font-weight: 700;
-      font-size: 1.1rem;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: darken($primary-light, 10%);
-      }
-
-      &:active {
-        transform: scale(0.98);
-      }
+    &:active {
+      transform: scale(0.98);
     }
   }
 }
@@ -114,4 +76,16 @@ body {
 
 .footer {
   flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .cart-item {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  #cart-items {
+    flex-direction: column;
+    align-items: center;
+  }
 }
