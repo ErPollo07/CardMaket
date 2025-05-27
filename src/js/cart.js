@@ -50,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
               <h5 class="cm-card-title">${card.name}</h5>
               <div class="card-price-btn-row">
                 <p class="card-price">${card.price}$</p>
-                <button class="btn-add-to-cart">Add to cart</button>
               </div>
             </div>
           </div>
