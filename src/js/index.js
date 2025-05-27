@@ -35,9 +35,34 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error fetching products:", error);
     });
 
-  const cardsContainer = document.getElementById("card-row-container");
+  // Prendi il valore dalla query string se presente
+  const params = new URLSearchParams(window.location.search);
+  const searchParam = params.get("search") || "";
 
-  JSON.parse(localStorage.getItem("products")).forEach((card) => {
+  // Mostra le carte filtrate
+  renderCards(searchParam);
+
+  // Ascolta l'evento custom per la ricerca live
+  document.addEventListener("search-cards", (e) => {
+    renderCards(e.detail);
+    // Aggiorna anche la searchbar se presente
+    const searchBar = document.getElementById("search-bar");
+    if (searchBar) searchBar.value = e.detail;
+  });
+});
+
+function renderCards(filter = "") {
+  const cardsContainer = document.getElementById("card-row-container");
+  cardsContainer.innerHTML = "";
+
+  const allProducts = JSON.parse(localStorage.getItem("products")) || [];
+  const search = filter.trim().toLowerCase();
+
+  const filtered = search
+    ? allProducts.filter((card) => card.name.toLowerCase().startsWith(search))
+    : allProducts;
+
+  filtered.forEach((card) => {
     const cardElement = document.createElement("div");
     cardElement.classList.add(
       "card-market-item",
@@ -47,42 +72,30 @@ document.addEventListener("DOMContentLoaded", () => {
       "col-sm-6",
       "mb-5"
     );
-
-    // Resolve the name of the png in assets/images
     const cardImageSrc = card.name.toLowerCase().replace(/ /g, "_");
-
     cardElement.innerHTML = `
-          <div class="cm-card-item">
-            <img
-              class="card-img-top"
-              src="../assets/images/${cardImageSrc}.png"
-              alt="${card.name}"
-            />
-            <div class="cm-card-body">
-              <h5 class="cm-card-title">${card.name}</h5>
-              <div class="card-price-btn-row">
-                <p class="card-price">${card.price}$</p>
-                <button class="btn-add-to-cart">Add to cart</button>
-              </div>
-            </div>
+      <div class="cm-card-item">
+        <img class="card-img-top" src="../assets/images/${cardImageSrc}.png" alt="${card.name}" />
+        <div class="cm-card-body">
+          <h5 class="cm-card-title">${card.name}</h5>
+          <div class="card-price-btn-row">
+            <p class="card-price">${card.price}$</p>
+            <button class="btn-add-to-cart">Add to cart</button>
           </div>
-        `;
-
-    // Append the element of the card
+        </div>
+      </div>
+    `;
+    const addToCartBtn = cardElement.querySelector('.btn-add-to-cart');
+    addToCartBtn.addEventListener('mouseup', function () {
+      // Prendi il carrello attuale o creane uno nuovo
+      let user = JSON.parse(localStorage.getItem('user'));
+      // Aggiungi sempre la carta (senza controllare se già presente)
+      user.cart.push({ ...card, quantity: 1 });
+      localStorage.setItem('user', JSON.stringify(user));
+      // Feedback semplice
+      addToCartBtn.textContent = "Added!";
+      setTimeout(() => addToCartBtn.textContent = "Add to cart", 1000);
+    });
     cardsContainer.appendChild(cardElement);
   });
-});
-
-const search_bar = $("#search-bar");
-const search_form = $("#search-form");
-
-search_form.on("submit", function (event) {
-  event.preventDefault();
-  console.log(search_bar.val());
-
-  const search_term = search_bar.val();
-
-  window.location.href = `products.html?search=${encodeURIComponent(
-    search_term
-  )}`;
-});
+}

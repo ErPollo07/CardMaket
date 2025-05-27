@@ -36,8 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
-
-
   // Get the real logged-in user from localStorage
   const user = JSON.parse(localStorage.getItem("user"));
   const username = user.username;
@@ -84,6 +82,30 @@ document.addEventListener("DOMContentLoaded", () => {
           console.error("Error fetching users:", error);
           window.location.href = "login.html";
         });
+    });
+  }
+
+  // Gestione submit del form di ricerca
+  const searchForm = document.getElementById("search-form");
+  const searchBar = document.getElementById("search-bar");
+  if (searchForm && searchBar) {
+    searchForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const search_term = searchBar.value.trim();
+      const currentPage = window.location.pathname.split("/").pop();
+
+      if (currentPage === "index.html" || currentPage === "") {
+        // Siamo già in index, aggiorna la lista senza ricaricare
+        const searchEvent = new CustomEvent("search-cards", {
+          detail: search_term,
+        });
+        document.dispatchEvent(searchEvent);
+      } else {
+        // Vai su index.html con parametro search
+        window.location.href = `index.html?search=${encodeURIComponent(
+          search_term
+        )}`;
+      }
     });
   }
 });

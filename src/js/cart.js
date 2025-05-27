@@ -40,15 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
       const cardImageSrc = card.name.toLowerCase().replace(/ /g, "_");
 
       cardElement.innerHTML = `
-          <div class="card">
+          <div class="cm-card-item">
             <img
               class="card-img-top"
               src="../assets/images/${cardImageSrc}.png"
               alt="${card.name}"
             />
-            <div class="card-body">
-              <h5 class="card-title">${card.name}</h5>
-              <p class="card-price">${card.price}$</p>
+            <div class="cm-card-body">
+              <h5 class="cm-card-title">${card.name}</h5>
+              <div class="card-price-btn-row">
+                <p class="card-price">${card.price}$</p>
+                <button class="btn-add-to-cart">Add to cart</button>
+              </div>
             </div>
           </div>
         `;
