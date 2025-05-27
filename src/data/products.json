@@ -8,15 +8,59 @@
     "price": 20
   },
   {
-    "name": "carta 3",
+    "name": "Charizard",
     "price": 15
   },
   {
-    "name": "carta 4",
+    "name": "Clefairy EX",
     "price": 35
   },
   {
-    "name": "carta 5",
+    "name": "Giratina V",
+    "price": 62
+  },
+  {
+    "name": "Glaceon EX",
+    "price": 62
+  },
+  {
+    "name": "Milotic Holo",
+    "price": 62
+  },
+  {
+    "name": "Moltres&Zapdos&Articuno GX",
+    "price": 62
+  },
+  {
+    "name": "MRayquaza EX",
+    "price": 62
+  },
+  {
+    "name": "Pikachu FullArt",
+    "price": 62
+  },
+  {
+    "name": "Pikachu VMAX",
+    "price": 62
+  },
+  {
+    "name": "Raging Bolt",
+    "price": 62
+  },
+  {
+    "name": "Single Strike Urshifu VMAX",
+    "price": 62
+  },
+  {
+    "name": "Team Rocket's Mewtwo EX",
+    "price": 62
+  },
+  {
+    "name": "Tyranitar EX",
+    "price": 62
+  },
+  {
+    "name": "Umbreon EX",
     "price": 62
   }
 ]
