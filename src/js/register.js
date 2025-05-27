@@ -1,70 +1,104 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const registrationForm = document.getElementById('registrationForm');
-    const nicknameInput = document.getElementById('nickname');
-    const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirmPassword');
-    const messageDiv = document.getElementById('message');
+async function getUsers() {
+  const users = await fetch("../data/users.json");
+  return await users.json();
+}
 
-    registrationForm.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
+document.addEventListener("DOMContentLoaded", function () {
+  if (!localStorage.getItem("users")) {
+    // If users are not in localStorage, fetch them and store
+    getUsers()
+      .then((data) => {
+        localStorage.setItem("users", JSON.stringify(data));
+      })
+      .catch((error) => {
+        console.error("Error fetching users:", error);
+      });
+  }
 
-        const nickname = nicknameInput.value.trim();
-        const password = passwordInput.value; // Passwords are not trimmed to allow spaces if desired
-        const confirmPassword = confirmPasswordInput.value;
+  const registrationForm = document.getElementById("registrationForm");
+  const nicknameInput = document.getElementById("nickname");
+  const passwordInput = document.getElementById("password");
+  const confirmPasswordInput = document.getElementById("confirmPassword");
+  const messageDiv = document.getElementById("message");
 
-        // Clear any previous messages
-        messageDiv.textContent = '';
-        messageDiv.style.display = 'none';
+  registrationForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
 
-        // --- Validation Checks ---
+    const nickname = nicknameInput.value.trim();
+    const password = passwordInput.value;
+    const confirmPassword = confirmPasswordInput.value;
 
-        if (nickname === '') {
-            messageDiv.textContent = "⚠️ Please enter a username.";
-            messageDiv.style.display = "block";
-            messageDiv.style.color = "red";
-            nicknameInput.focus();
-            return; // Stop execution
-        }
+    // Clear any previous messages
+    messageDiv.textContent = "";
+    messageDiv.style.display = "none";
 
-        if (password === '') {
-            messageDiv.textContent = "⚠️ Please enter a password.";
-            messageDiv.style.display = "block";
-            messageDiv.style.color = "red";
-            passwordInput.focus();
-            return; // Stop execution
-        }
+    // --- Validation Checks ---
 
-        if (confirmPassword === '') {
-            messageDiv.textContent = "⚠️ Please confirm your password.";
-            messageDiv.style.display = "block";
-            messageDiv.style.color = "red";
-            confirmPasswordInput.focus();
-            return; // Stop execution
-        }
+    if (nickname === "") {
+      messageDiv.textContent = "⚠️ Please enter a username.";
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
+      nicknameInput.focus();
+      return; // Stop execution
+    }
 
-        if (password !== confirmPassword) {
-            messageDiv.textContent = "⚠️ The passwords do not match.";
-            messageDiv.style.display = "block";
-            messageDiv.style.color = "red";
+    if (password === "") {
+      messageDiv.textContent = "⚠️ Please enter a password.";
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
+      passwordInput.focus();
+      return; // Stop execution
+    }
 
-            // Clear password fields if they don't match
-            passwordInput.value = '';
-            confirmPasswordInput.value = '';
-            passwordInput.focus(); // Focus on the first password field
-            return; // Stop execution
-        }
+    if (confirmPassword === "") {
+      messageDiv.textContent = "⚠️ Please confirm your password.";
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
+      confirmPasswordInput.focus();
+      return; // Stop execution
+    }
 
-        // If all validations pass
-        messageDiv.textContent = "✅ Registration completed!";
-        messageDiv.style.display = "block";
-        messageDiv.style.color = "green";
+    if (password !== confirmPassword) {
+      messageDiv.textContent = "⚠️ The passwords do not match.";
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
 
-        // In a real application, you'd send data to a server for registration
-        // and only redirect upon successful response.
+      // Clear password fields if they don't match
+      passwordInput.value = "";
+      confirmPasswordInput.value = "";
+      passwordInput.focus(); // Focus on the first password field
+      return; // Stop execution
+    }
 
-        // Simulate a small delay before redirecting for the user to see the success message
-        setTimeout(() => {
-            window.location.href = "login.html"; // Redirect to login page
-        }, 1500); // Redirect after 1.5 seconds
+    let users = JSON.parse(localStorage.getItem("users"));
+    console.log("Current users:", users);
+
+    const userExists = users.find((user) => user.username === nickname);
+
+    if (userExists) {
+      messageDiv.textContent = "⚠️ This username is already taken.";
+      messageDiv.style.display = "block";
+      messageDiv.style.color = "red";
+      nicknameInput.focus();
+      return; // Stop execution
+    }
+
+    users.push({
+      username: nickname,
+      password: password,
+      cart: [],
     });
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    // If all validations pass
+    messageDiv.textContent = "✅ Registration completed!";
+    messageDiv.style.display = "block";
+    messageDiv.style.color = "green";
+
+    // Simulate a small delay before redirecting for the user to see the success message
+    setTimeout(() => {
+      window.location.href = "login.html"; // Redirect to login page
+    }, 1500); // Redirect after 1.5 seconds
+  });
 });
