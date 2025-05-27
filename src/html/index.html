@@ -9,35 +9,7 @@
 </head>
 
 <body>
-  <header>
-    <div class="container-fluid py-2">
-      <div class="d-flex flex-nowrap align-items-center justify-content-between gap-3">
-        <div id="container-logo" class="flex-shrink-0">
-          <a href="index.html">
-            <img src="../assets/images/LOGO.png" alt="Logo" style="height: 100px; width: auto" />
-          </a>
-        </div>
-        <form id="search-form" class="d-flex flex-nowrap flex-grow-1 mx-3" style="max-width: 600px">
-          <input type="text" id="search-bar" class="form-control me-2" placeholder="Search for cards..."
-            style="min-width: 0" />
-          <button id="search-button" class="btn btn-outline-primary flex-shrink-0" type="submit">
-            Search
-          </button>
-        </form>
-
-        <div class="account-dropdown flex-shrink-0">
-          <a href="#" class="account-icon">
-            <img src="../assets/icons/account_icon.svg" alt="Account Icon" style="height: 32px; width: auto" />
-          </a>
-          <div class="dropdown-content">
-            <p class="username-display">Nome utente</p>
-            <a href="cart.html">Carrello</a>
-            <a href="#" id="logout-link">Logout</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+  <header id="header"></header>
 
   <div id="content">
     <div id="title">Card Market</div>
@@ -45,41 +17,10 @@
   </div>
 
   <footer id="footer"></footer>
-
-  <footer class="footer bg-dark text-white py-4 mt-5">
-    <div class="container">
-      <div class="row">
-        <!-- Colonna 1 -->
-        <div class="col-md-4 mb-3 mb-md-0">
-          <h5>Who we are</h5>
-          <p>A group of friends who like cards.</p>
-        </div>
-        <!-- Colonna 2 -->
-        <div class="col-md-4 mb-3 mb-md-0">
-          <h5>Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white text-decoration-none">Home</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Products</a></li>
-            <li><a href="#" class="text-white text-decoration-none">Cart</a></li>
-          </ul>
-        </div>
-        <!-- Colonna 3 -->
-        <div class="col-md-4">
-          <h5>Contact us</h5>
-          <p>Email: info.cardmarket@gmail.com</p>
-          <p>Tel: +39 351 551 7627</p>
-        </div>
-      </div>
-      <hr class="bg-white" />
-      <div class="text-center">
-        <p class="mb-0">&copy; 2025 cardmarket.com - All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
 </body>
 
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="../js/index.js"></script>
 <script src="../js/header.js"></script>
-
+<script src="../js/footer.js"></script>
 </html>

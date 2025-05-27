@@ -1,0 +1,56 @@
+// Variabili per colori e padding
+$footer-bg-color: #343a40;
+$footer-text-color: white;
+$footer-padding: 2rem 0;
+$footer-margin-top: 5rem;
+$footer-link-color: white;
+$footer-link-hover-color: #ccc;
+
+#footer {
+  background-color: $footer-bg-color;
+  color: $footer-text-color;
+  padding: $footer-padding;
+  margin-top: $footer-margin-top;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .col {
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  a {
+    color: $footer-link-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $footer-link-hover-color;
+    }
+  }
+
+  hr {
+    border-color: $footer-text-color;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+}

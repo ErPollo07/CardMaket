@@ -1,11 +1,41 @@
-async function getUsers() {
-  const users = await fetch("../data/users.json");
-  return await users.json();
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const headerDiv = document.getElementById("header");
+
+  headerDiv.innerHTML = `
+    <div class="container-fluid py-2">
+      <div class="d-flex flex-nowrap align-items-center justify-content-between gap-3">
+        <div id="container-logo" class="flex-shrink-0">
+          <a href="index.html">
+            <img src="../assets/images/LOGO.png" alt="Logo" style="height: 100px; width: auto" />
+          </a>
+        </div>
+        <form id="search-form" class="d-flex flex-nowrap flex-grow-1 mx-3" style="max-width: 600px">
+          <input type="text" id="search-bar" class="form-control me-2" placeholder="Search for cards..."
+            style="min-width: 0" />
+          <button id="search-button" class="btn btn-outline-primary flex-shrink-0" type="submit">
+            Search
+          </button>
+        </form>
+
+        <div class="account-dropdown flex-shrink-0">
+          <a href="#" class="account-icon">
+            <img src="../assets/icons/account_icon.svg" alt="Account Icon" style="height: 32px; width: auto" />
+          </a>
+          <div class="dropdown-content">
+            <p class="username-display">Nome utente</p>
+            <a href="cart.html">Carrello</a>
+            <a href="#" id="logout-link">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
 
 // Get the real logged-in user from localStorage
 const user = JSON.parse(localStorage.getItem("user"));
-const username = user ? user.username : "Ospite";
+const username = user.username;
 
 $(".dropdown-content .username-display").text("Ciao, " + username + "!");
 
