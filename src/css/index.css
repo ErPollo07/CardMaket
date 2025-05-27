@@ -11862,19 +11862,23 @@ header {
   margin: 0;
   font-size: clamp(1rem, 2vw, 1.25rem);
 }
+
 header #container-logo img {
   height: clamp(40px, 8vw, 60px);
   cursor: pointer;
 }
+
 header .d-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 header #container-searchbar form {
   display: flex;
 }
-header #container-searchbar form input#search-bar {
+
+header #container-searchbar input#search-bar {
   padding: 0.6rem 1rem;
   font-size: 1rem;
   border: none;
@@ -11883,8 +11887,9 @@ header #container-searchbar form input#search-bar {
   width: clamp(120px, 30vw, 200px);
   max-width: 100%;
 }
-header #container-searchbar form button#search-button {
-  background-color: #4a90e2;
+
+header #container-searchbar button#search-button {
+  background-color: #3d98ff;
   border: none;
   color: white;
   font-weight: 700;
@@ -11894,28 +11899,25 @@ header #container-searchbar form button#search-button {
   font-size: 1rem;
   transition: background-color 0.3s ease;
 }
-header #container-searchbar form button#search-button:hover {
-  background-color: rgb(34.3857142857, 117.3857142857, 214.6142857143);
-}
-header #container-searchbar form button#search-button:active {
-  transform: scale(0.98);
-}
+
 header .account-dropdown {
   position: relative;
-  display: inline-block;
-  cursor: pointer;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
+
 header .account-dropdown .account-icon {
   display: block;
   line-height: 1;
 }
+
 header .account-dropdown .account-icon img {
   height: 32px;
   width: auto;
   border-radius: 50%;
 }
+
 header .account-dropdown .dropdown-content {
   display: none;
   position: absolute;
@@ -11931,12 +11933,14 @@ header .account-dropdown .dropdown-content {
   transform: translateY(-10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 header .account-dropdown .dropdown-content.show {
   display: block;
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
+
 header .account-dropdown .dropdown-content p.username-display {
   padding: 12px 16px;
   margin: 0;
@@ -11948,6 +11952,7 @@ header .account-dropdown .dropdown-content p.username-display {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 header .account-dropdown .dropdown-content a {
   color: #333;
   padding: 12px 16px;
@@ -11956,6 +11961,7 @@ header .account-dropdown .dropdown-content a {
   text-align: left;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 header .account-dropdown .dropdown-content a:hover {
   background-color: #f1f1f1;
   color: #1a4db7;

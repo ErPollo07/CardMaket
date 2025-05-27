@@ -9,119 +9,108 @@ header {
   z-index: 100;
   margin: 0;
   font-size: clamp(1rem, 2vw, 1.25rem);
+}
 
-  #container-logo img {
-    height: clamp(40px, 8vw, 60px);
-    cursor: pointer;
-  }
+header #container-logo img {
+  height: clamp(40px, 8vw, 60px);
+  cursor: pointer;
+}
 
-  .d-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+header .d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  #container-searchbar {
-    form {
-      display: flex;
+header #container-searchbar form {
+  display: flex;
+}
 
-      input#search-bar {
-        padding: 0.6rem 1rem;
-        font-size: 1rem;
-        border: none;
-        border-radius: 6px 0 0 6px;
-        outline: none;
-        width: clamp(120px, 30vw, 200px);
-        max-width: 100%;
-      }
+header #container-searchbar input#search-bar {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  width: clamp(120px, 30vw, 200px);
+  max-width: 100%;
+}
 
-      button#search-button {
-        background-color: $primary-light;
-        border: none;
-        color: white;
-        font-weight: 700;
-        padding: 0 1.2rem;
-        border-radius: 0 6px 6px 0;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
+header #container-searchbar button#search-button {
+  background-color: #3d98ff;
+  border: none;
+  color: white;
+  font-weight: 700;
+  padding: 0 1.2rem;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
 
-        &:hover {
-          background-color: darken($primary-light, 10%);
-        }
+header .account-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 
-        &:active {
-          transform: scale(0.98);
-        }
-      }
-    }
-  }
+header .account-dropdown .account-icon {
+  display: block;
+  line-height: 1;
+}
 
-  .account-dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+header .account-dropdown .account-icon img {
+  height: 32px;
+  width: auto;
+  border-radius: 50%;
+}
 
-    .account-icon {
-      display: block;
-      line-height: 1;
-    }
+header .account-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  top: calc(100% + 10px);
+  right: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-    .account-icon img {
-      height: 32px;
-      width: auto;
-      border-radius: 50%;
-    }
+header .account-dropdown .dropdown-content.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      min-width: 180px;
-      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 100;
-      top: calc(100% + 10px);
-      right: 0;
-      border-radius: 8px;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
+header .account-dropdown .dropdown-content p.username-display {
+  padding: 12px 16px;
+  margin: 0;
+  color: $gray;
+  font-weight: bold;
+  border-bottom: 1px solid $border;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-    .dropdown-content.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
+header .account-dropdown .dropdown-content a {
+  color: $gray;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
 
-    .dropdown-content p.username-display {
-      padding: 12px 16px;
-      margin: 0;
-      color: $gray;
-      font-weight: bold;
-      border-bottom: 1px solid $border;
-      text-align: left;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .dropdown-content a {
-      color: $gray;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-      transition: background-color 0.2s ease, color 0.2s ease;
-
-      &:hover {
-        background-color: $gray-light;
-        color: $primary;
-      }
-    }
-  }
+header .account-dropdown .dropdown-content a:hover {
+  background-color: $gray-light;
+  color: $primary;
 }
