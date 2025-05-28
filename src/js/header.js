@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="../assets/icons/account_icon.svg" alt="Account Icon" style="height: 32px; width: auto" />
           </a>
           <div class="dropdown-content">
-            <p class="username-display">Nome utente</p>
-            <a href="cart.html">Carrello</a>
+            <p class="username-display">User Name</p>
+            <a href="cart.html">Cart</a>
             <a href="#" id="logout-link">Logout</a>
           </div>
         </div>
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll(".dropdown-content .username-display")
     .forEach((el) => {
-      el.textContent = "Ciao, " + username + "!"; // "Ciao" means "Hi" in Italian.
+      el.textContent = "HEY, " + username ;
     });
 
   // Add event listeners for dropdown toggle functionality.
