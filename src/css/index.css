@@ -12076,6 +12076,8 @@ body {
 .card-price-btn-row {
   /* Styles for the container holding the price and the "Add to cart" button. */
   display: flex;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
 }
@@ -12087,7 +12089,6 @@ body {
   color: #28a745;
   text-align: left;
   margin: 0;
-  width: 100%;
   margin-bottom: 0;
   display: inline-block;
   vertical-align: middle;
