@@ -11851,6 +11851,7 @@ textarea.form-control-lg {
   }
 }
 header {
+  /* Styles for the main header element. */
   width: 100%;
   background-color: #1a4db7;
   padding: 0 2vw;
@@ -11864,21 +11865,25 @@ header {
 }
 
 header #container-logo img {
+  /* Styles for the logo image within the header. */
   height: clamp(40px, 8vw, 60px);
   cursor: pointer;
 }
 
 header .d-flex {
+  /* Styles for flex containers within the header, ensuring alignment and spacing. */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 header #container-searchbar form {
+  /* Styles for the search form within the header. */
   display: flex;
 }
 
 header #container-searchbar input#search-bar {
+  /* Styles for the search input field within the header. */
   padding: 0.6rem 1rem;
   font-size: 1rem;
   border: none;
@@ -11889,6 +11894,7 @@ header #container-searchbar input#search-bar {
 }
 
 header #container-searchbar button#search-button {
+  /* Styles for the search button within the header. */
   background-color: #3d98ff;
   border: none;
   color: white;
@@ -11901,6 +11907,7 @@ header #container-searchbar button#search-button {
 }
 
 header .account-dropdown {
+  /* Styles for the account dropdown container. */
   position: relative;
   display: flex;
   align-items: center;
@@ -11908,17 +11915,20 @@ header .account-dropdown {
 }
 
 header .account-dropdown .account-icon {
+  /* Styles for the account icon within the dropdown. */
   display: block;
   line-height: 1;
 }
 
 header .account-dropdown .account-icon img {
+  /* Styles for the image used as the account icon. */
   height: 32px;
   width: auto;
   border-radius: 50%;
 }
 
 header .account-dropdown .dropdown-content {
+  /* Styles for the hidden content of the account dropdown. */
   display: none;
   position: absolute;
   background-color: #fff;
@@ -11935,6 +11945,7 @@ header .account-dropdown .dropdown-content {
 }
 
 header .account-dropdown .dropdown-content.show {
+  /* Styles for when the dropdown content is visible. */
   display: block;
   opacity: 1;
   transform: translateY(0);
@@ -11942,6 +11953,7 @@ header .account-dropdown .dropdown-content.show {
 }
 
 header .account-dropdown .dropdown-content p.username-display {
+  /* Styles for the username display within the dropdown content. */
   padding: 12px 16px;
   margin: 0;
   color: #333;
@@ -11954,6 +11966,7 @@ header .account-dropdown .dropdown-content p.username-display {
 }
 
 header .account-dropdown .dropdown-content a {
+  /* Styles for links within the dropdown content. */
   color: #333;
   padding: 12px 16px;
   text-decoration: none;
@@ -11963,66 +11976,65 @@ header .account-dropdown .dropdown-content a {
 }
 
 header .account-dropdown .dropdown-content a:hover {
+  /* Styles for links within the dropdown content when hovered over. */
   background-color: #f1f1f1;
   color: #1a4db7;
 }
 
 html,
 body {
+  /* This section ensures both the HTML and body elements take up 100% of the viewport height. */
   height: 100%;
 }
 
 body {
+  /* This section defines the basic layout of the body, setting a minimum height and using flexbox for content arrangement. */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 #content {
+  /* This section allows the main content area to grow and shrink, taking up available space. */
   flex: 1 0 auto;
 }
 
 .footer {
+  /* This section prevents the footer from shrinking. */
   flex-shrink: 0;
 }
 
 #content {
-  /* Basic styling for the content wrapper if needed */
+  /* This section applies basic styling to the content wrapper, including padding and text alignment. */
   padding: 2vw;
-  /* Add some padding around the content */
   text-align: center;
-  /* Center align everything inside content by default */
 }
 #content #title {
+  /* This section styles the main title within the content area. */
   font-family: "Montserrat", sans-serif;
   font-size: clamp(2rem, 6vw, 4rem);
-  /* Titolo responsive */
   font-weight: 700;
-  /* Bold */
   color: #000;
   letter-spacing: 2px;
   margin-top: 50px;
   margin-bottom: 30px;
   text-transform: uppercase;
   position: relative;
-  /* Needed for pseudo-elements */
   display: inline-block;
-  /* Underline effect */
+  /* This pseudo-element creates an underline effect for the title. */
 }
 #content #title::after {
   content: "";
   display: block;
   width: 80px;
-  /* Shorter underline */
   height: 4px;
   background-color: #3c3ce7;
   margin: 10px auto 0;
-  /* Center the underline below the text */
   border-radius: 2px;
-  /* Slightly rounded corners */
 }
 
-.card-item {
+.cm-card-item {
+  /* Styles for the main container of each product card. */
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -12034,15 +12046,16 @@ body {
 }
 
 .card-img-top {
+  /* Styles for the product image at the top of the card. */
   width: 100%;
   aspect-ratio: 5/7;
   height: auto;
   object-fit: cover;
   display: block;
-  border-bottom: 4px solid #4a90e2;
 }
 
 .cm-card-body {
+  /* Styles for the content area below the image. */
   padding: 1.2rem 0.5rem 0.8rem 0.8rem;
   display: flex;
   flex-direction: column;
@@ -12052,6 +12065,7 @@ body {
 }
 
 .card-title {
+  /* Styles for the product name. */
   font-weight: 700;
   font-size: 1.3rem;
   margin: 0 0 0.2rem 0;
@@ -12060,12 +12074,14 @@ body {
 }
 
 .card-price-btn-row {
+  /* Styles for the container holding the price and the "Add to cart" button. */
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .card-price {
+  /* Styles for the price text. */
   font-size: 1.2rem;
   font-weight: 600;
   color: #28a745;
@@ -12078,6 +12094,7 @@ body {
 }
 
 .btn-add-to-cart {
+  /* Styles for the "Add to cart" button. */
   font-size: 0.95rem;
   padding: 0.3rem 0.8rem;
   margin-left: 0.5rem;
@@ -12094,29 +12111,23 @@ body {
 }
 
 .login-page {
-  /* Ensure html and body take full height and reset default browser styles */
+  /* This section defines the styling for the entire login page. */
 }
 .login-page html,
 .login-page body {
   font-family: "Nunito", sans-serif;
   margin: 0;
-  /* Explicitly remove default margin */
   padding: 0;
-  /* Explicitly remove default padding */
   height: 100%;
-  /* Ensure they take full viewport height */
   width: 100%;
-  /* Ensure they take full viewport width */
   display: flex;
   justify-content: center;
-  /* Center horizontally */
   align-items: center;
-  /* Center vertically */
   background: #4a90e2;
   overflow: auto;
-  /* Allow scrolling if content exceeds viewport */
 }
 .login-page .login-container {
+  /* This section styles the main container for the login form. */
   background-color: #fff;
   padding: 40px;
   border-radius: 15px;
@@ -12125,14 +12136,12 @@ body {
   position: relative;
   animation: fadeIn 0.5s ease-out;
   width: 100%;
-  /* Take full width of its flex item */
   max-width: 400px;
   box-sizing: border-box;
-  /* Include padding and border in the element's total width and height */
   margin: auto;
-  /* This can help in some cases, though flexbox should handle it */
 }
 @keyframes fadeIn {
+  /* This defines a fadeIn animation for elements. */
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -12143,6 +12152,7 @@ body {
   }
 }
 .login-page .logo {
+  /* This section styles the logo image on the login page. */
   width: 120px;
   height: auto;
   display: block;
@@ -12150,10 +12160,12 @@ body {
   animation: fadeIn 0.8s ease-in;
 }
 .login-page .input-group {
+  /* This section styles the container for input fields. */
   margin-bottom: 25px;
 }
 .login-page input[type=text],
 .login-page input[type=password] {
+  /* This section styles the text and password input fields. */
   width: 100%;
   padding: 12px;
   border: 2px solid #4a90e2;
@@ -12165,10 +12177,12 @@ body {
 }
 .login-page input[type=text]:focus,
 .login-page input[type=password]:focus {
+  /* This section styles input fields when they are in focus. */
   border-color: #1a4db7;
   outline: none;
 }
 .login-page .login-button {
+  /* This section styles the login submission button. */
   background-color: #4a90e2;
   color: #333;
   padding: 12px 25px;
@@ -12182,48 +12196,46 @@ body {
   width: 100%;
 }
 .login-page .login-button:hover {
+  /* This section styles the login button on hover. */
   background-color: #1a4db7;
   color: #fff;
   transform: translateY(-2px);
 }
 .login-page .login-button:active {
+  /* This section styles the login button when it's actively pressed. */
   transform: translateY(0);
 }
 .login-page .register-link {
+  /* This section styles the "Register" link. */
   font-size: 1em;
   color: #1a4db7;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .login-page .register-link:hover {
+  /* This section styles the "Register" link on hover. */
   color: #4a90e2;
   text-decoration: underline;
 }
 
 .register-page {
-  /* Ensure html and body take full height and reset default browser styles */
+  /* This section defines the overall styling for the registration page. */
 }
 .register-page html,
 .register-page body {
   font-family: "Nunito", sans-serif;
   margin: 0;
-  /* Explicitly remove default margin */
   padding: 0;
-  /* Explicitly remove default padding */
   height: 100%;
-  /* Ensure they take full viewport height */
   width: 100%;
-  /* Ensure they take full viewport width */
   display: flex;
   justify-content: center;
-  /* Center horizontally */
   align-items: center;
-  /* Center vertically */
   background: #4a90e2;
   overflow: auto;
-  /* Allow scrolling if content exceeds viewport */
 }
 .register-page .register-container {
+  /* This section styles the main container for the registration form. */
   background-color: #fff;
   padding: 40px;
   border-radius: 15px;
@@ -12232,14 +12244,12 @@ body {
   position: relative;
   animation: fadeIn 0.5s ease-out;
   width: 100%;
-  /* Take full width of its flex item */
   max-width: 400px;
   box-sizing: border-box;
-  /* Include padding and border in the element's total width and height */
   margin: auto;
-  /* This can help in some cases, though flexbox should handle it */
 }
 @keyframes fadeIn {
+  /* This defines a fadeIn animation for elements. */
   from {
     opacity: 0;
     transform: translateY(-20px);
@@ -12250,6 +12260,7 @@ body {
   }
 }
 .register-page .logo {
+  /* This section styles the logo image on the registration page. */
   width: 120px;
   height: auto;
   display: block;
@@ -12257,10 +12268,12 @@ body {
   animation: fadeIn 0.8s ease-in;
 }
 .register-page .input-group {
+  /* This section styles the container for input fields. */
   margin-bottom: 25px;
 }
 .register-page input[type=text],
 .register-page input[type=password] {
+  /* This section styles the text and password input fields. */
   width: 100%;
   padding: 12px;
   border: 2px solid #4a90e2;
@@ -12272,10 +12285,12 @@ body {
 }
 .register-page input[type=text]:focus,
 .register-page input[type=password]:focus {
+  /* This section styles input fields when they are in focus. */
   border-color: #1a4db7;
   outline: none;
 }
 .register-page .register-button {
+  /* This section styles the registration submission button. */
   background-color: #4a90e2;
   color: #333;
   padding: 12px 25px;
@@ -12289,43 +12304,49 @@ body {
   width: 100%;
 }
 .register-page .register-button:hover {
+  /* This section styles the registration button on hover. */
   background-color: #1a4db7;
   color: #fff;
   transform: translateY(-2px);
 }
 .register-page .register-button:active {
+  /* This section styles the registration button when it's actively pressed. */
   transform: translateY(0);
 }
 .register-page .login-link {
+  /* This section styles the "Login" link text. */
   font-size: 1em;
   color: #1a4db7;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .register-page .login-link a {
+  /* This section styles the actual anchor tag within the login link. */
   color: #1a4db7;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .register-page .login-link a:hover {
+  /* This section styles the login link when hovered over. */
   color: #4a90e2;
   text-decoration: underline;
 }
 
 .card-price {
+  /* Increases the font size for the price. */
   font-size: 1.25rem;
-  /* Aumenta la dimensione del font per il prezzo */
+  /* Makes the price text bold. */
   font-weight: bold;
-  /* Rende il prezzo in grassetto */
+  /* Sets the color for the price. */
   color: #28a745;
-  /* Usa un verde per il prezzo, ma puoi cambiarlo a piacere */
+  /* Adds space between the title and the price. */
   margin-top: 10px;
-  /* Distanza tra il titolo e il prezzo */
+  /* Aligns the price text to the left. */
   text-align: left;
-  /* Allinea il prezzo a sinistra */
 }
 
 .card-container {
+  /* Styles the container that holds multiple product cards. */
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -12334,72 +12355,81 @@ body {
 }
 
 .card {
+  /* Styles individual product cards, providing a responsive layout. */
   flex: 1 1 220px;
   max-width: 300px;
   min-width: 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Responsive card layout */
 }
 
 html,
 body {
+  /* Ensures both HTML and body elements take up 100% of the viewport height. */
   height: 100%;
 }
 
 body {
+  /* Defines the basic layout of the body, setting a minimum height and using flexbox. */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 #content {
+  /* Allows the main content area to grow and shrink, taking up available space. */
   flex: 1 0 auto;
 }
 
 .footer {
+  /* Prevents the footer from shrinking. */
   flex-shrink: 0;
 }
 
 .card-img-top {
+  /* Styles the product image at the top of the card, ensuring it's proportionate and responsive. */
   width: 100%;
   aspect-ratio: 5/7;
   height: auto;
   object-fit: cover;
   display: block;
-  /* Immagini sempre proporzionate, responsive e tagliate se necessario */
 }
 
 @media (max-width: 600px) {
+  /* Media query for screens up to 600px wide, adjusting card container layout for smaller screens. */
   .card-container {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
   .card {
+    /* Adjusts individual card width for smaller screens. */
     max-width: 100%;
     min-width: 0;
   }
 }
 html {
+  /* This section ensures the HTML element occupies the full height of the viewport. */
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
 .cart-page {
+  /* This section defines the overall styling for the cart page. */
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
-  background: #4a90e2;
-  color: #fff;
+  background: #fff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-.cart-page #empty-cart-message {
+
+#empty-cart-message {
+  /* This section styles the message displayed when the cart is empty. */
   font-size: 2.5rem;
   color: #98b8d9;
   height: 300px;
@@ -12408,7 +12438,9 @@ html {
   align-items: center;
   width: 100%;
 }
-.cart-page #cart-items {
+
+#cart-items {
+  /* This section styles the container for the cart items. */
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -12418,7 +12450,9 @@ html {
   max-width: 1200px;
   flex-grow: 1;
 }
-.cart-page .buy-button {
+
+.buy-button {
+  /* This section styles the "Buy" button. */
   background-color: #4a90e2;
   border: none;
   color: white;
@@ -12430,83 +12464,101 @@ html {
   margin-top: 1rem;
   transition: background-color 0.3s ease;
 }
-.cart-page .buy-button:hover {
+.buy-button:hover {
   background-color: rgb(34.3857142857, 117.3857142857, 214.6142857143);
 }
-.cart-page .buy-button:active {
+.buy-button:active {
   transform: scale(0.98);
 }
 
 html,
 body {
+  /* This section ensures both HTML and body elements occupy the full height. */
   height: 100%;
 }
 
 body {
+  /* This section defines the basic layout of the body. */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 #content {
+  /* This section allows the content area to expand and fill available space. */
   flex: 1 0 auto;
 }
 
 .footer {
+  /* This section prevents the footer from shrinking. */
   flex-shrink: 0;
 }
 
 @media (max-width: 600px) {
+  /* This media query applies styles for screens up to 600px wide. */
   .cart-item {
+    /* This section adjusts the width of cart items on smaller screens. */
     max-width: 100%;
     min-width: 0;
   }
   #cart-items {
+    /* This section changes the layout of cart items on smaller screens. */
     flex-direction: column;
     align-items: center;
   }
 }
 #footer {
+  /* Styles for the footer section of the webpage. */
   background-color: #343a40;
   color: #fff;
   padding: 2rem 0;
   margin-top: 5rem;
 }
 #footer .container {
+  /* Styles for the container within the footer, making it a flex container. */
   display: flex;
   flex-wrap: wrap;
 }
 #footer .row {
+  /* Styles for rows within the footer container, making them flex containers. */
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 #footer .col {
+  /* Styles for columns within the footer rows. */
   flex: 1;
   margin-bottom: 1rem;
 }
 #footer h5, #footer .h5 {
+  /* Styles for heading level 5 within the footer. */
   margin-bottom: 1rem;
 }
 #footer ul {
+  /* Styles for unordered lists within the footer, removing default list styling. */
   list-style-type: none;
   padding-left: 0;
 }
 #footer a {
+  /* Styles for links within the footer. */
   color: #fff;
   text-decoration: none;
 }
 #footer a:hover {
+  /* Styles for links when hovered over. */
   color: #ccc;
 }
 #footer hr {
+  /* Styles for horizontal rule elements within the footer. */
   border-color: #fff;
 }
 #footer .text-center {
+  /* Styles for horizontally centering text. */
   text-align: center;
 }
 
 body {
+  /* This section applies global styles to the body element. */
   font-family: "Nunito", sans-serif;
   background: #fff;
   margin: 0;

@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .querySelectorAll(".dropdown-content .username-display")
     .forEach((el) => {
-      el.textContent = "HEY, " + username ;
+      el.textContent = "HEY, " + username;
     });
 
   // Add event listeners for dropdown toggle functionality.
@@ -75,14 +75,29 @@ document.addEventListener("DOMContentLoaded", () => {
     logoutLink.addEventListener("click", function (event) {
       // Prevents the default action of the link (e.g., navigating to '#').
       event.preventDefault();
+      // Save the user data in to the list of users in localStorage.
+      // Get the users from localStorage
+      const users = JSON.parse(localStorage.getItem("users"));
+
+      // Filters out the logged-in user to remove them from the list.
+      const updatedUsers = users.filter(
+        (u) => u.username !== user.username
+      );
+      updatedUsers.push(user);
+
       // Clears all data from localStorage.
       localStorage.removeItem("user");
+    
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
+
       // Alerts the user that they have been logged out.
-      alert("Effettuato il logout!"); // "Effettuato il logout!" means "Logout successful!" in Italian.
+      alert("Logout successful!");
       // Closes any open dropdowns.
       document.querySelectorAll(".dropdown-content").forEach((content) => {
         content.classList.remove("show");
       });
+
+      window.location.href = "login.html";
     });
   }
 
