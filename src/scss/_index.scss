@@ -1,56 +1,53 @@
 html,
 body {
+  /* This section ensures both the HTML and body elements take up 100% of the viewport height. */
   height: 100%;
 }
 
 body {
+  /* This section defines the basic layout of the body, setting a minimum height and using flexbox for content arrangement. */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 #content {
+  /* This section allows the main content area to grow and shrink, taking up available space. */
   flex: 1 0 auto;
 }
 
 .footer {
+  /* This section prevents the footer from shrinking. */
   flex-shrink: 0;
 }
 
 #content {
-  /* Basic styling for the content wrapper if needed */
+  /* This section applies basic styling to the content wrapper, including padding and text alignment. */
   padding: 2vw;
-  /* Add some padding around the content */
   text-align: center;
-  /* Center align everything inside content by default */
 
   #title {
+    /* This section styles the main title within the content area. */
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(2rem, 6vw, 4rem);
-    /* Titolo responsive */
     font-weight: 700;
-    /* Bold */
     color: $text;
     letter-spacing: 2px;
     margin-top: 50px;
     margin-bottom: 30px;
     text-transform: uppercase;
     position: relative;
-    /* Needed for pseudo-elements */
     display: inline-block;
 
-    /* Underline effect */
+    /* This pseudo-element creates an underline effect for the title. */
     &::after {
       content: '';
       display: block;
       width: 80px;
-      /* Shorter underline */
       height: 4px;
       background-color: $accent;
       margin: 10px auto 0;
-      /* Center the underline below the text */
       border-radius: 2px;
-      /* Slightly rounded corners */
     }
   }
 }

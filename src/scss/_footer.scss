@@ -1,48 +1,58 @@
 #footer {
+  /* Styles for the footer section of the webpage. */
   background-color: $footer-bg-color;
   color: $footer-text-color;
   padding: $footer-padding;
   margin-top: $footer-margin-top;
 
   .container {
+    /* Styles for the container within the footer, making it a flex container. */
     display: flex;
     flex-wrap: wrap;
   }
 
   .row {
+    /* Styles for rows within the footer container, making them flex containers. */
     display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
 
   .col {
+    /* Styles for columns within the footer rows. */
     flex: 1;
     margin-bottom: 1rem;
   }
 
   h5 {
+    /* Styles for heading level 5 within the footer. */
     margin-bottom: 1rem;
   }
 
   ul {
+    /* Styles for unordered lists within the footer, removing default list styling. */
     list-style-type: none;
     padding-left: 0;
   }
 
   a {
+    /* Styles for links within the footer. */
     color: $footer-link-color;
     text-decoration: none;
 
     &:hover {
+      /* Styles for links when hovered over. */
       color: $footer-link-hover-color;
     }
   }
 
   hr {
+    /* Styles for horizontal rule elements within the footer. */
     border-color: $footer-text-color;
   }
 
   .text-center {
+    /* Styles for horizontally centering text. */
     text-align: center;
   }
 }

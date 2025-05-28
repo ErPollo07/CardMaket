@@ -1,28 +1,21 @@
 .login-page {
-
-  /* Ensure html and body take full height and reset default browser styles */
+  /* This section defines the styling for the entire login page. */
   html,
   body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
-    /* Explicitly remove default margin */
     padding: 0;
-    /* Explicitly remove default padding */
     height: 100%;
-    /* Ensure they take full viewport height */
     width: 100%;
-    /* Ensure they take full viewport width */
     display: flex;
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
-    /* Center vertically */
     background: $primary-light;
     overflow: auto;
-    /* Allow scrolling if content exceeds viewport */
   }
 
   .login-container {
+    /* This section styles the main container for the login form. */
     background-color: #fff;
     padding: 40px;
     border-radius: 15px;
@@ -31,15 +24,13 @@
     position: relative;
     animation: fadeIn 0.5s ease-out;
     width: 100%;
-    /* Take full width of its flex item */
     max-width: 400px;
     box-sizing: border-box;
-    /* Include padding and border in the element's total width and height */
     margin: auto;
-    /* This can help in some cases, though flexbox should handle it */
   }
 
   @keyframes fadeIn {
+    /* This defines a fadeIn animation for elements. */
     from {
       opacity: 0;
       transform: translateY(-20px);
@@ -52,6 +43,7 @@
   }
 
   .logo {
+    /* This section styles the logo image on the login page. */
     width: 120px;
     height: auto;
     display: block;
@@ -60,11 +52,13 @@
   }
 
   .input-group {
+    /* This section styles the container for input fields. */
     margin-bottom: 25px;
   }
 
   input[type="text"],
   input[type="password"] {
+    /* This section styles the text and password input fields. */
     width: 100%;
     padding: 12px;
     border: 2px solid $primary-light;
@@ -77,11 +71,13 @@
 
   input[type="text"]:focus,
   input[type="password"]:focus {
+    /* This section styles input fields when they are in focus. */
     border-color: $primary;
     outline: none;
   }
 
   .login-button {
+    /* This section styles the login submission button. */
     background-color: $primary-light;
     color: $gray;
     padding: 12px 25px;
@@ -96,16 +92,19 @@
   }
 
   .login-button:hover {
+    /* This section styles the login button on hover. */
     background-color: $primary;
     color: $text-light;
     transform: translateY(-2px);
   }
 
   .login-button:active {
+    /* This section styles the login button when it's actively pressed. */
     transform: translateY(0);
   }
 
   .register-link {
+    /* This section styles the "Register" link. */
     font-size: 1em;
     color: $primary;
     text-decoration: none;
@@ -113,6 +112,7 @@
   }
 
   .register-link:hover {
+    /* This section styles the "Register" link on hover. */
     color: $primary-light;
     text-decoration: underline;
   }

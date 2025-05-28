@@ -1,4 +1,5 @@
 header {
+  /* Styles for the main header element. */
   width: 100%;
   background-color: $primary;
   padding: 0 2vw;
@@ -12,21 +13,25 @@ header {
 }
 
 header #container-logo img {
+  /* Styles for the logo image within the header. */
   height: clamp(40px, 8vw, 60px);
   cursor: pointer;
 }
 
 header .d-flex {
+  /* Styles for flex containers within the header, ensuring alignment and spacing. */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 header #container-searchbar form {
+  /* Styles for the search form within the header. */
   display: flex;
 }
 
 header #container-searchbar input#search-bar {
+  /* Styles for the search input field within the header. */
   padding: 0.6rem 1rem;
   font-size: 1rem;
   border: none;
@@ -37,6 +42,7 @@ header #container-searchbar input#search-bar {
 }
 
 header #container-searchbar button#search-button {
+  /* Styles for the search button within the header. */
   background-color: #3d98ff;
   border: none;
   color: white;
@@ -49,6 +55,7 @@ header #container-searchbar button#search-button {
 }
 
 header .account-dropdown {
+  /* Styles for the account dropdown container. */
   position: relative;
   display: flex;
   align-items: center;
@@ -56,17 +63,20 @@ header .account-dropdown {
 }
 
 header .account-dropdown .account-icon {
+  /* Styles for the account icon within the dropdown. */
   display: block;
   line-height: 1;
 }
 
 header .account-dropdown .account-icon img {
+  /* Styles for the image used as the account icon. */
   height: 32px;
   width: auto;
   border-radius: 50%;
 }
 
 header .account-dropdown .dropdown-content {
+  /* Styles for the hidden content of the account dropdown. */
   display: none;
   position: absolute;
   background-color: #fff;
@@ -83,6 +93,7 @@ header .account-dropdown .dropdown-content {
 }
 
 header .account-dropdown .dropdown-content.show {
+  /* Styles for when the dropdown content is visible. */
   display: block;
   opacity: 1;
   transform: translateY(0);
@@ -90,6 +101,7 @@ header .account-dropdown .dropdown-content.show {
 }
 
 header .account-dropdown .dropdown-content p.username-display {
+  /* Styles for the username display within the dropdown content. */
   padding: 12px 16px;
   margin: 0;
   color: $gray;
@@ -102,6 +114,7 @@ header .account-dropdown .dropdown-content p.username-display {
 }
 
 header .account-dropdown .dropdown-content a {
+  /* Styles for links within the dropdown content. */
   color: $gray;
   padding: 12px 16px;
   text-decoration: none;
@@ -111,6 +124,7 @@ header .account-dropdown .dropdown-content a {
 }
 
 header .account-dropdown .dropdown-content a:hover {
+  /* Styles for links within the dropdown content when hovered over. */
   background-color: $gray-light;
   color: $primary;
 }

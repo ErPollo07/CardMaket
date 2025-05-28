@@ -1,6 +1,6 @@
 const cardContainer = document.getElementById("card-row-container");
 
-// Take the search parameter from the url
+// Take the search parameter from the URL
 const params = new URLSearchParams(window.location.search);
 const searchQuery = params.get("search");
 
@@ -34,15 +34,18 @@ async function getProductList() {
   return products;
 }
 
-// Search in the products list
+// Search in the products list and display them
 getProductList()
   .then((pList) => {
-    // cycle through the list of products
-    pList.forEach((card) => {
-      /* if (card.name.startWith(searchQuery)) {
-        console.log(card);
-      } */
+    // Filter products based on the search query if it exists
+    const filteredProducts = searchQuery
+      ? pList.filter((card) =>
+          card.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+        )
+      : pList;
 
+    // Cycle through the list of filtered products
+    filteredProducts.forEach((card) => {
       const cardElement = document.createElement("div");
       cardElement.classList.add(
         "card-market-item",
@@ -51,7 +54,7 @@ getProductList()
         "col-md-4",
         "col-sm-6"
       );
-      // resolve the name of the png in assets/images
+      // Resolve the name of the PNG in assets/images
       const cardImageSrc = card.name.toLowerCase().replace(/ /g, "_");
 
       console.log(cardImageSrc);
@@ -73,11 +76,11 @@ getProductList()
           </div>
         `;
 
-      // append the element of the card
+      // Append the element of the card
       cardContainer.appendChild(cardElement);
     });
   })
   .catch((err) => {
-    // catch any error if it occurs
+    // Catch any error if it occurs
     console.error("Error generating:", err);
   });

@@ -1,11 +1,15 @@
 async function getUsers() {
+  // Fetches user data from a local JSON file.
   const users = await fetch("../data/users.json");
+  // Parses the JSON response and returns the data.
   return await users.json();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Gets the header division element.
   const headerDiv = document.getElementById("header");
 
+  // Sets the inner HTML of the header, including logo, search bar, and account dropdown.
   headerDiv.innerHTML = `
     <div class="container-fluid py-2">
       <div class="d-flex flex-nowrap align-items-center justify-content-between gap-3">
@@ -36,43 +40,50 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
-  // Get the real logged-in user from localStorage
+  // Get the logged-in user data from localStorage.
   const user = JSON.parse(localStorage.getItem("user"));
+  // Extract the username from the user object.
   const username = user.username;
 
-  // Aggiorna il nome utente
+  // Update the displayed username in the dropdown content.
   document
     .querySelectorAll(".dropdown-content .username-display")
     .forEach((el) => {
-      el.textContent = "Ciao, " + username + "!";
+      el.textContent = "Ciao, " + username + "!"; // "Ciao" means "Hi" in Italian.
     });
 
-  // Dropdown toggle
+  // Add event listeners for dropdown toggle functionality.
   document.querySelectorAll(".account-dropdown").forEach((dropdown) => {
     dropdown.addEventListener("click", function (event) {
+      // Prevents the click event from propagating further, which would close the dropdown immediately.
       event.stopPropagation();
+      // Toggles the 'show' class to display or hide the dropdown content.
       this.querySelector(".dropdown-content").classList.toggle("show");
     });
   });
 
-  // Chiudi dropdown cliccando fuori
+  // Close dropdown when clicking outside of it.
   document.addEventListener("click", function (event) {
     document.querySelectorAll(".dropdown-content").forEach((content) => {
       content.classList.remove("show");
     });
   });
 
-  // Logout
+  // Handle user logout.
   const logoutLink = document.getElementById("logout-link");
   if (logoutLink) {
     logoutLink.addEventListener("click", function (event) {
+      // Prevents the default action of the link (e.g., navigating to '#').
       event.preventDefault();
+      // Clears all data from localStorage.
       localStorage.clear();
-      alert("Effettuato il logout!");
+      // Alerts the user that they have been logged out.
+      alert("Effettuato il logout!"); // "Effettuato il logout!" means "Logout successful!" in Italian.
+      // Closes any open dropdowns.
       document.querySelectorAll(".dropdown-content").forEach((content) => {
         content.classList.remove("show");
       });
-      // Make sure the users variable is present after logout
+      // Re-fetches user data and redirects to the login page.
       getUsers()
         .then((data) => {
           localStorage.setItem("users", JSON.stringify(data));
@@ -85,23 +96,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Gestione submit del form di ricerca
+  // Handle search form submission.
   const searchForm = document.getElementById("search-form");
   const searchBar = document.getElementById("search-bar");
   if (searchForm && searchBar) {
     searchForm.addEventListener("submit", function (event) {
+      // Prevents the default form submission behavior (page reload).
       event.preventDefault();
+      // Trims whitespace from the search input.
       const search_term = searchBar.value.trim();
+      // Gets the current page file name.
       const currentPage = window.location.pathname.split("/").pop();
 
+      // Checks if the current page is index.html.
       if (currentPage === "index.html" || currentPage === "") {
-        // Siamo già in index, aggiorna la lista senza ricaricare
+        // If on the index page, dispatches a custom event to update the card list without reloading.
         const searchEvent = new CustomEvent("search-cards", {
           detail: search_term,
         });
         document.dispatchEvent(searchEvent);
       } else {
-        // Vai su index.html con parametro search
+        // If not on the index page, redirects to index.html with the search term as a URL parameter.
         window.location.href = `index.html?search=${encodeURIComponent(
           search_term
         )}`;

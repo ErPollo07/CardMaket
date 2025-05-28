@@ -1,17 +1,18 @@
 .card-price {
+  /* Increases the font size for the price. */
   font-size: 1.25rem;
-  /* Aumenta la dimensione del font per il prezzo */
+  /* Makes the price text bold. */
   font-weight: bold;
-  /* Rende il prezzo in grassetto */
+  /* Sets the color for the price. */
   color: $success;
-  /* Usa un verde per il prezzo, ma puoi cambiarlo a piacere */
+  /* Adds space between the title and the price. */
   margin-top: 10px;
-  /* Distanza tra il titolo e il prezzo */
+  /* Aligns the price text to the left. */
   text-align: left;
-  /* Allinea il prezzo a sinistra */
 }
 
 .card-container {
+  /* Styles the container that holds multiple product cards. */
   margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -20,44 +21,49 @@
 }
 
 .card {
+  /* Styles individual product cards, providing a responsive layout. */
   flex: 1 1 220px;
   max-width: 300px;
   min-width: 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Responsive card layout */
 }
 
 html,
 body {
+  /* Ensures both HTML and body elements take up 100% of the viewport height. */
   height: 100%;
 }
 
 body {
+  /* Defines the basic layout of the body, setting a minimum height and using flexbox. */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 #content {
+  /* Allows the main content area to grow and shrink, taking up available space. */
   flex: 1 0 auto;
 }
 
 .footer {
+  /* Prevents the footer from shrinking. */
   flex-shrink: 0;
 }
 
 .card-img-top {
+  /* Styles the product image at the top of the card, ensuring it's proportionate and responsive. */
   width: 100%;
   aspect-ratio: 5/7;
   height: auto;
   object-fit: cover;
   display: block;
-  /* Immagini sempre proporzionate, responsive e tagliate se necessario */
 }
 
 @media (max-width: 600px) {
+  /* Media query for screens up to 600px wide, adjusting card container layout for smaller screens. */
   .card-container {
     flex-direction: column;
     align-items: center;
@@ -65,6 +71,7 @@ body {
   }
 
   .card {
+    /* Adjusts individual card width for smaller screens. */
     max-width: 100%;
     min-width: 0;
   }

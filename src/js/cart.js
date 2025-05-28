@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Get the content div and card container elements
   const contentDiv = document.getElementById("content");
-  const cardContainer = document.getElementById("card-row-container");
+  const cardContainer = document.getElementById("card-row-container"); // This variable is declared but not used in the provided code.
 
   // Get the cart of the logged-in user from localStorage
   const user = JSON.parse(localStorage.getItem("user"));
+  // Initialize cart; if user or user.cart is null/undefined, default to an empty array
   const cart = user ? user.cart : [];
 
   // Check if the cart is empty
@@ -25,9 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
 
-    // Put the cards in the container
+    // Populate the container with individual product cards
     cart.forEach((card) => {
+      // Create a new div element for each card
       const cardElement = document.createElement("div");
+      // Add Bootstrap and custom classes for styling and responsiveness
       cardElement.classList.add(
         "card-market-item",
         "col-12",
@@ -36,9 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "col-sm-6",
         "mb-5"
       );
-      // Resolve the name of the png in assets/images
+      // Resolve the image file name based on the card's name (lowercase and spaces replaced with underscores)
       const cardImageSrc = card.name.toLowerCase().replace(/ /g, "_");
 
+      // Set the inner HTML of the card element
       cardElement.innerHTML = `
           <div class="cm-card-item">
             <img
@@ -55,18 +60,25 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         `;
 
-      // Append the element of the card
+      // Append the created card element to the card row container
       document.getElementById("card-row-container").appendChild(cardElement);
     });
   }
+  // Log the user's cart to the console for debugging purposes
   console.log("User's cart:", cart);
 });
 
+// Add an event listener to the "Buy Cart" button
 document.getElementById("buy-cart-btn").addEventListener("mouseup", () => {
+  // Get the user data from localStorage
   const user = JSON.parse(localStorage.getItem("user"));
 
+  // Clear the user's cart
   user.cart = [];
+  // Save the updated user data back to localStorage
   localStorage.setItem("user", JSON.stringify(user));
+  // Display a success message to the user
   alert("Cart purchased successfully! Thank you for your order.");
+  // Redirect the user to the home page
   window.location.href = "index.html";
 });
