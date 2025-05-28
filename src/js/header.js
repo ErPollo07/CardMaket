@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   headerDiv.innerHTML = `
     <div class="container-fluid py-2">
       <div class="d-flex flex-nowrap align-items-center justify-content-between gap-3">
-        <div id="container-logo" class="flex-shrink-0">
+        <div id="container-logo">
           <a href="index.html">
             <img src="../assets/images/LOGO.png" alt="Logo" style="height: 100px; width: auto" />
           </a>
