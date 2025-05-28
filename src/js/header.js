@@ -76,23 +76,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // Prevents the default action of the link (e.g., navigating to '#').
       event.preventDefault();
       // Clears all data from localStorage.
-      localStorage.clear();
+      localStorage.removeItem("user");
       // Alerts the user that they have been logged out.
       alert("Effettuato il logout!"); // "Effettuato il logout!" means "Logout successful!" in Italian.
       // Closes any open dropdowns.
       document.querySelectorAll(".dropdown-content").forEach((content) => {
         content.classList.remove("show");
       });
-      // Re-fetches user data and redirects to the login page.
-      getUsers()
-        .then((data) => {
-          localStorage.setItem("users", JSON.stringify(data));
-          window.location.href = "login.html";
-        })
-        .catch((error) => {
-          console.error("Error fetching users:", error);
-          window.location.href = "login.html";
-        });
     });
   }
 
