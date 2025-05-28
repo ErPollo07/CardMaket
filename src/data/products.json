@@ -9,7 +9,7 @@
   },
   {
     "name": "Charizard",
-    "price": 15
+    "price": 10000
   },
   {
     "name": "Clefairy EX",
@@ -21,46 +21,46 @@
   },
   {
     "name": "Glaceon EX",
-    "price": 62
+    "price": 120
   },
   {
     "name": "Milotic Holo",
-    "price": 62
+    "price": 30
   },
   {
     "name": "Moltres&Zapdos&Articuno GX",
-    "price": 62
+    "price": 200
   },
   {
     "name": "MRayquaza EX",
-    "price": 62
+    "price": 450
   },
   {
     "name": "Pikachu FullArt",
-    "price": 62
+    "price": 90
   },
   {
     "name": "Pikachu VMAX",
-    "price": 62
+    "price": 125
   },
   {
     "name": "Raging Bolt",
-    "price": 62
+    "price": 13
   },
   {
     "name": "Single Strike Urshifu VMAX",
-    "price": 62
+    "price": 750
   },
   {
     "name": "Team Rocket's Mewtwo EX",
-    "price": 62
+    "price": 1200
   },
   {
     "name": "Tyranitar EX",
-    "price": 62
+    "price": 8
   },
   {
     "name": "Umbreon EX",
-    "price": 62
+    "price": 2000
   }
 ]
