@@ -11853,15 +11853,19 @@ textarea.form-control-lg {
 header {
   /* Styles for the main header element. */
   width: 100%;
-  background-color: #1a4db7;
+  background: linear-gradient(90deg, rgba(26, 77, 183, 0.98) 0%, rgba(74, 144, 226, 0.92) 100%);
+  /* Soft shadow and subtle border for depth */
+  box-shadow: 0 2px 16px 0 rgba(26, 77, 183, 0.1), 0 1.5px 0 0 rgba(255, 255, 255, 0.08) inset;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
   padding: 0 2vw;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
   margin: 0;
   font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Optional: glass effect */
+  backdrop-filter: blur(2px);
 }
 
 header #container-logo img {
@@ -11877,33 +11881,46 @@ header .d-flex {
   justify-content: space-between;
 }
 
-header #container-searchbar form {
-  /* Styles for the search form within the header. */
+header form#search-form {
   display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 1rem;
 }
 
-header #container-searchbar input#search-bar {
-  /* Styles for the search input field within the header. */
+header input#search-bar {
+  flex: 1 1 auto;
+  min-width: 0;
   padding: 0.6rem 1rem;
   font-size: 1rem;
   border: none;
   border-radius: 6px 0 0 6px;
   outline: none;
-  width: clamp(120px, 30vw, 200px);
   max-width: 100%;
 }
 
-header #container-searchbar button#search-button {
-  /* Styles for the search button within the header. */
-  background-color: #3d98ff;
+header button#search-button {
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #ff5e57 0%, #ffb347 100%);
   border: none;
-  color: white;
+  color: #fff;
   font-weight: 700;
-  padding: 0 1.2rem;
-  border-radius: 0 6px 6px 0;
+  padding: 0 1.5rem;
+  border-radius: 0 12px 12px 0;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(255, 94, 87, 0.15);
+  letter-spacing: 1px;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  height: 100%;
+}
+
+header button#search-button:hover {
+  background: linear-gradient(90deg, #ffb347 0%, #ff5e57 100%);
+  box-shadow: 0 4px 16px rgba(255, 94, 87, 0.25);
+  transform: translateY(-2px) scale(1.04);
 }
 
 header .account-dropdown {
@@ -11925,6 +11942,16 @@ header .account-dropdown .account-icon img {
   height: 32px;
   width: auto;
   border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 8px rgba(26, 77, 183, 0.1);
+  border: 2.5px solid #fff;
+  outline: 2.5px solid rgba(26, 77, 183, 0.5);
+  transition: outline 0.2s, box-shadow 0.2s;
+}
+
+header .account-dropdown .account-icon img:hover {
+  outline: 3.5px solid #3c3ce7;
+  box-shadow: 0 4px 16px rgba(60, 60, 231, 0.18);
 }
 
 header .account-dropdown .dropdown-content {
@@ -12333,83 +12360,6 @@ body {
   text-decoration: underline;
 }
 
-.card-price {
-  /* Increases the font size for the price. */
-  font-size: 1.25rem;
-  /* Makes the price text bold. */
-  font-weight: bold;
-  /* Sets the color for the price. */
-  color: #28a745;
-  /* Adds space between the title and the price. */
-  margin-top: 10px;
-  /* Aligns the price text to the left. */
-  text-align: left;
-}
-
-.card-container {
-  /* Styles the container that holds multiple product cards. */
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-}
-
-.card {
-  /* Styles individual product cards, providing a responsive layout. */
-  flex: 1 1 220px;
-  max-width: 300px;
-  min-width: 160px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-html,
-body {
-  /* Ensures both HTML and body elements take up 100% of the viewport height. */
-  height: 100%;
-}
-
-body {
-  /* Defines the basic layout of the body, setting a minimum height and using flexbox. */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-#content {
-  /* Allows the main content area to grow and shrink, taking up available space. */
-  flex: 1 0 auto;
-}
-
-.footer {
-  /* Prevents the footer from shrinking. */
-  flex-shrink: 0;
-}
-
-.card-img-top {
-  /* Styles the product image at the top of the card, ensuring it's proportionate and responsive. */
-  width: 100%;
-  aspect-ratio: 5/7;
-  height: auto;
-  object-fit: cover;
-  display: block;
-}
-
-@media (max-width: 600px) {
-  /* Media query for screens up to 600px wide, adjusting card container layout for smaller screens. */
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  .card {
-    /* Adjusts individual card width for smaller screens. */
-    max-width: 100%;
-    min-width: 0;
-  }
-}
 html {
   /* This section ensures the HTML element occupies the full height of the viewport. */
   height: 100%;
@@ -12454,19 +12404,24 @@ html {
 
 .buy-button {
   /* This section styles the "Buy" button. */
-  background-color: #4a90e2;
+  background: linear-gradient(90deg, #ff5e57 0%, #ffb347 100%);
   border: none;
-  color: white;
-  padding: 0.8rem 1.5rem;
+  color: #fff;
   font-weight: 700;
+  padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 94, 87, 0.15);
+  letter-spacing: 1px;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  height: 100%;
 }
 .buy-button:hover {
-  background-color: rgb(34.3857142857, 117.3857142857, 214.6142857143);
+  background: linear-gradient(90deg, #ffb347 0%, #ff5e57 100%);
+  box-shadow: 0 4px 16px rgba(255, 94, 87, 0.25);
+  transform: translateY(-2px) scale(1.04);
 }
 .buy-button:active {
   transform: scale(0.98);
@@ -12509,27 +12464,33 @@ body {
   }
 }
 #footer {
-  /* Styles for the footer section of the webpage. */
+  /* Original styles for the footer section of the webpage. */
   background-color: #343a40;
   color: #fff;
   padding: 2rem 0;
   margin-top: 5rem;
+  width: 100%;
+  min-width: 0;
 }
 #footer .container {
-  /* Styles for the container within the footer, making it a flex container. */
-  display: flex;
-  flex-wrap: wrap;
-}
-#footer .row {
-  /* Styles for rows within the footer container, making them flex containers. */
+  /* Flex container for the footer content. */
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  min-width: 0;
+}
+#footer .row {
+  /* Flex container for rows within the footer. */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 0;
 }
 #footer .col {
   /* Styles for columns within the footer rows. */
-  flex: 1;
+  flex: 1 1 200px;
   margin-bottom: 1rem;
+  min-width: 180px;
 }
 #footer h5, #footer .h5 {
   /* Styles for heading level 5 within the footer. */
@@ -12556,6 +12517,16 @@ body {
 #footer .text-center {
   /* Styles for horizontally centering text. */
   text-align: center;
+  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.85;
+  letter-spacing: 1px;
+  position: relative;
+  bottom: 0;
+  left: 0;
 }
 
 body {

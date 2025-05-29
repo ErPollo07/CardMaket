@@ -1,15 +1,19 @@
 header {
   /* Styles for the main header element. */
   width: 100%;
-  background-color: $primary;
+  background: linear-gradient(90deg, rgba($primary, 0.98) 0%, rgba($primary-light, 0.92) 100%);
+  /* Soft shadow and subtle border for depth */
+  box-shadow: 0 2px 16px 0 rgba(26, 77, 183, 0.10), 0 1.5px 0 0 rgba(255,255,255,0.08) inset;
+  border-bottom: 1.5px solid rgba(255,255,255,0.10);
   padding: 0 2vw;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
   left: 0;
   z-index: 100;
   margin: 0;
   font-size: clamp(1rem, 2vw, 1.25rem);
+  /* Optional: glass effect */
+  backdrop-filter: blur(2px);
 }
 
 header #container-logo img {
@@ -25,33 +29,46 @@ header .d-flex {
   justify-content: space-between;
 }
 
-header #container-searchbar form {
-  /* Styles for the search form within the header. */
+header form#search-form {
   display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 1rem;
 }
 
-header #container-searchbar input#search-bar {
-  /* Styles for the search input field within the header. */
+header input#search-bar {
+  flex: 1 1 auto;
+  min-width: 0;
   padding: 0.6rem 1rem;
   font-size: 1rem;
   border: none;
   border-radius: 6px 0 0 6px;
   outline: none;
-  width: clamp(120px, 30vw, 200px);
   max-width: 100%;
 }
 
-header #container-searchbar button#search-button {
-  /* Styles for the search button within the header. */
-  background-color: #3d98ff;
+header button#search-button {
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #ff5e57 0%, #ffb347 100%);
   border: none;
-  color: white;
+  color: #fff;
   font-weight: 700;
-  padding: 0 1.2rem;
-  border-radius: 0 6px 6px 0;
+  padding: 0 1.5rem;
+  border-radius: 0 12px 12px 0;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(255, 94, 87, 0.15);
+  letter-spacing: 1px;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  height: 100%;
+}
+
+header button#search-button:hover {
+  background: linear-gradient(90deg, #ffb347 0%, #ff5e57 100%);
+  box-shadow: 0 4px 16px rgba(255, 94, 87, 0.25);
+  transform: translateY(-2px) scale(1.04);
 }
 
 header .account-dropdown {
@@ -73,6 +90,16 @@ header .account-dropdown .account-icon img {
   height: 32px;
   width: auto;
   border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 2px 8px rgba(26,77,183,0.10);
+  border: 2.5px solid #fff;
+  outline: 2.5px solid rgba($primary, 0.5);
+  transition: outline 0.2s, box-shadow 0.2s;
+}
+
+header .account-dropdown .account-icon img:hover {
+  outline: 3.5px solid $accent;
+  box-shadow: 0 4px 16px rgba(60,60,231,0.18);
 }
 
 header .account-dropdown .dropdown-content {

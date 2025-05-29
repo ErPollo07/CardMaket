@@ -43,19 +43,24 @@ html {
 
 .buy-button {
   /* This section styles the "Buy" button. */
-  background-color: $primary-light;
+  background: linear-gradient(90deg, #ff5e57 0%, #ffb347 100%);
   border: none;
-  color: white;
-  padding: 0.8rem 1.5rem;
+  color: #fff;
   font-weight: 700;
+  padding: 0.8rem 1.5rem;
   font-size: 1.1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   margin-top: 1rem;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 94, 87, 0.15);
+  letter-spacing: 1px;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  height: 100%;
 
   &:hover {
-    background-color: darken($primary-light, 10%);
+    background: linear-gradient(90deg, #ffb347 0%, #ff5e57 100%);
+    box-shadow: 0 4px 16px rgba(255, 94, 87, 0.25);
+    transform: translateY(-2px) scale(1.04);
   }
 
   &:active {

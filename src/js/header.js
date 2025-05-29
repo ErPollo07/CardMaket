@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <form id="search-form" class="d-flex flex-nowrap flex-grow-1 mx-3" style="max-width: 600px">
           <input type="text" id="search-bar" class="form-control me-2" placeholder="Search for cards..."
             style="min-width: 0" />
-          <button id="search-button" class="btn btn-outline-primary flex-shrink-0" type="submit">
+          <button id="search-button" class="flex-shrink-0" type="submit">
             Search
           </button>
         </form>
