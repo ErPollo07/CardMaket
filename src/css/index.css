@@ -11872,6 +11872,12 @@ header #container-logo img {
   /* Styles for the logo image within the header. */
   height: clamp(40px, 8vw, 60px);
   cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), filter 0.3s;
+}
+
+header #container-logo img:hover {
+  transform: scale(1.08) rotate(-8deg);
+  filter: drop-shadow(0 4px 16px rgba(60, 60, 231, 0.18));
 }
 
 header .d-flex {
@@ -11884,37 +11890,45 @@ header .d-flex {
 header form#search-form {
   display: flex;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: stretch;
   max-width: 600px;
   width: 100%;
   margin: 0 1rem;
 }
 
 header input#search-bar {
-  flex: 1 1 auto;
+  flex: 1 1 0%;
   min-width: 0;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
+  padding: 0.6em 1em;
+  font-size: 1em;
   border: none;
   border-radius: 6px 0 0 6px;
   outline: none;
   max-width: 100%;
+  height: 48px;
+  margin-right: 0;
 }
 
 header button#search-button {
-  flex-shrink: 0;
+  flex: 0 0 18%;
+  max-width: 18%;
+  min-width: 80px;
   background: linear-gradient(90deg, #ff5e57 0%, #ffb347 100%);
   border: none;
   color: #fff;
   font-weight: 700;
-  padding: 0 1.5rem;
+  padding: 0 0.5em;
   border-radius: 0 12px 12px 0;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1em;
   box-shadow: 0 2px 8px rgba(255, 94, 87, 0.15);
   letter-spacing: 1px;
   transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
-  height: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
 }
 
 header button#search-button:hover {
@@ -12008,6 +12022,19 @@ header .account-dropdown .dropdown-content a:hover {
   color: #1a4db7;
 }
 
+@media (max-width: 600px) {
+  header form#search-form {
+    max-width: 100%;
+    margin: 0;
+  }
+  header button#search-button {
+    flex: 0 0 30%;
+    max-width: 30%;
+    min-width: 60px;
+    font-size: 0.95em;
+    padding: 0 0.3em;
+  }
+}
 html,
 body {
   /* This section ensures both the HTML and body elements take up 100% of the viewport height. */
@@ -12038,26 +12065,33 @@ body {
 }
 #content #title {
   /* This section styles the main title within the content area. */
-  font-family: "Montserrat", sans-serif;
-  font-size: clamp(2rem, 6vw, 4rem);
-  font-weight: 700;
-  color: #000;
-  letter-spacing: 2px;
-  margin-top: 50px;
-  margin-bottom: 30px;
+  font-family: "Montserrat", "Nunito", Arial, sans-serif;
+  font-size: clamp(3.2rem, 8vw, 5.5rem);
+  font-weight: 900;
+  color: #3c3ce7;
+  letter-spacing: 3px;
+  margin-top: 48px;
+  margin-bottom: 32px;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
+  text-shadow: 0 4px 24px rgba(60, 60, 231, 0.18), 0 2px 8px rgba(0, 0, 0, 0.1);
+  line-height: 1.05;
+  background: linear-gradient(90deg, #4a90e2 0%, #3c3ce7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   /* This pseudo-element creates an underline effect for the title. */
 }
 #content #title::after {
   content: "";
   display: block;
-  width: 80px;
-  height: 4px;
-  background-color: #3c3ce7;
-  margin: 10px auto 0;
-  border-radius: 2px;
+  width: 90px;
+  height: 5px;
+  background: linear-gradient(90deg, #3c3ce7 0%, #4a90e2 100%);
+  margin: 14px auto 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(60, 60, 231, 0.1);
 }
 
 .cm-card-item {
@@ -12381,13 +12415,33 @@ html {
 
 #empty-cart-message {
   /* This section styles the message displayed when the cart is empty. */
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #98b8d9;
   height: 300px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
+  gap: 1.2rem;
+}
+#empty-cart-message .empty-cart-emoji {
+  font-size: 4.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 8px rgba(60, 60, 231, 0.1));
+}
+#empty-cart-message .empty-cart-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4a90e2;
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+}
+#empty-cart-message .empty-cart-desc {
+  font-size: 1.1rem;
+  color: #333;
+  opacity: 0.85;
 }
 
 #cart-items {

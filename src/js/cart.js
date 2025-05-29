@@ -12,11 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (cart.length === 0) {
     // Put in the content div the empty cart message
     contentDiv.innerHTML = `
-      <div
-        id="empty-cart-message"
-        class="d-flex align-items-center justify-content-center"
-      >
-        <h1>:( No item in cart</h1>
+      <div id="empty-cart-message" class="d-flex align-items-center justify-content-center">
+        <div class="empty-cart-emoji">🛒</div>
+        <div class="empty-cart-title">:( No items in cart</div>
+        <div class="empty-cart-desc">Your cart is empty. Start adding some cards!</div>
       </div>
     `;
   } else {

@@ -19,11 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
           </a>
         </div>
         <form id="search-form" class="d-flex flex-nowrap flex-grow-1 mx-3" style="max-width: 600px">
-          <input type="text" id="search-bar" class="form-control me-2" placeholder="Search for cards..."
-            style="min-width: 0" />
-          <button id="search-button" class="flex-shrink-0" type="submit">
-            Search
-          </button>
+          <input type="text" id="search-bar" class="form-control" placeholder="Search for cards..." style="min-width: 0; margin-right: 0;" />
+          <button id="search-button" class="flex-shrink-0" type="submit" style="margin-left: 0;">Search</button>
         </form>
 
         <div class="account-dropdown flex-shrink-0">
