@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const passwordInput = document.getElementById("password");
   const confirmPasswordInput = document.getElementById("confirmPassword");
   const messageDiv = document.getElementById("message");
+  const privacyCheckbox = document.getElementById("privacy");
+  const privacyMessage = document.getElementById("privacy-message");
 
   // Adds an event listener for the form submission.
   registrationForm.addEventListener("submit", function (event) {
@@ -37,6 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Clears any previous messages and hides the message div.
     messageDiv.textContent = "";
     messageDiv.style.display = "none";
+    privacyMessage.textContent = "";
+    privacyMessage.style.display = "none";
 
     // --- Validation Checks ---
 
@@ -78,6 +82,15 @@ document.addEventListener("DOMContentLoaded", function () {
       confirmPasswordInput.value = "";
       passwordInput.focus(); // Focuses on the first password field.
       return; // Stops function execution.
+    }
+
+    // Validates if the privacy checkbox is not checked.
+    if (!privacyCheckbox.checked) {
+      privacyMessage.textContent = "⚠️ You must accept the Privacy Policy.";
+      privacyMessage.style.display = "block";
+      privacyMessage.style.color = "red";
+      privacyCheckbox.focus();
+      return;
     }
 
     // Retrieves existing users from localStorage.

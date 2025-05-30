@@ -24,12 +24,18 @@
       <div class="input-group">
         <input type="password" id="confirmPassword" placeholder="Confirm Password" />
       </div>
+      <div class="input-group privacy-group">
+        <input type="checkbox" id="privacy" />
+        <label for="privacy">I accept the <a href="privacy.html" target="_blank">Privacy Policy</a></label>
+      </div>
+      <div id="privacy-message"
+        style="display: none; color: red; font-size: 0.95em; margin-top: 2px; text-align: left; font-weight: bold;">
+      </div>
+      <div id="message" style="display: none; margin-top: 15px; font-weight: bold;"></div>
       <div>
         <button type="submit" class="register-button">Register</button>
       </div>
     </form>
-
-    <div id="message" style="display: none; margin-top: 15px; font-weight: bold;"></div>
 
     <div class="login-link">
       <p>Already have an Account? <a href="login.html">Log-in</a></p>

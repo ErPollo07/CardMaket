@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Clears all data from localStorage.
       localStorage.removeItem("user");
-    
+
       localStorage.setItem("users", JSON.stringify(updatedUsers));
 
       // Alerts the user that they have been logged out.

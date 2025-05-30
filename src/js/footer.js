@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="col">
           <h5>Contact us</h5>
-          <p>Email: info.cardmarket@gmail.com</p>
+          <p>Email: info@cartMarket.com</p>
           <p>Tel: +39 351 551 7627</p>
         </div>
       </div>

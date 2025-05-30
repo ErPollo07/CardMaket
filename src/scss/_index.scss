@@ -38,7 +38,7 @@ body {
     text-transform: uppercase;
     position: relative;
     display: inline-block;
-    text-shadow: 0 4px 24px rgba(60,60,231,0.18), 0 2px 8px rgba(0,0,0,0.10);
+    text-shadow: 0 4px 24px rgba(60, 60, 231, 0.18), 0 2px 8px rgba(0, 0, 0, 0.10);
     line-height: 1.05;
     background: linear-gradient(90deg, $primary-light 0%, $accent 100%);
     -webkit-background-clip: text;
@@ -54,7 +54,7 @@ body {
       background: linear-gradient(90deg, $accent 0%, $primary-light 100%);
       margin: 14px auto 0;
       border-radius: 3px;
-      box-shadow: 0 2px 8px rgba(60,60,231,0.10);
+      box-shadow: 0 2px 8px rgba(60, 60, 231, 0.10);
     }
   }
 }
