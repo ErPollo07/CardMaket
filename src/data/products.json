@@ -4,10 +4,6 @@
     "price": 10
   },
   {
-    "name": "Drago Bianco Occhi Blu",
-    "price": 20
-  },
-  {
     "name": "Charizard",
     "price": 10000
   },
@@ -52,6 +48,10 @@
     "price": 750
   },
   {
+    "name": "Drago Bianco Occhi Blu",
+    "price": 20
+  },
+  {
     "name": "Team Rocket's Mewtwo EX",
     "price": 1200
   },
@@ -62,5 +62,69 @@
   {
     "name": "Umbreon EX",
     "price": 2000
+  },
+  {
+    "name": "Blaziken VMAX",
+    "price": 20
+  },
+  {
+    "name": "Galarian Moltres V",
+    "price": 130
+  },
+  {
+    "name": "Iron Crown EX",
+    "price": 45
+  },
+  {
+    "name": "Iron Hands EX",
+    "price": 67
+  },
+  {
+    "name": "Lillie",
+    "price": 340
+  },
+  {
+    "name": "Lugia V",
+    "price": 200
+  },
+  {
+    "name": "MBlastoise EX",
+    "price": 12
+  },
+  {
+    "name": "Mega Sableye&Tyranitar GX",
+    "price": 245
+  },
+  {
+    "name": "Mew",
+    "price": 368
+  },
+  {
+    "name": "Mewtwo Ex",
+    "price": 10
+  },
+  {
+    "name": "Pikachu with Grey Felt Hat",
+    "price": 780
+  },
+  {
+    "name": "Rayquaza V",
+    "price": 54
+  },
+  {
+    "name": "Roaring Moon EX",
+    "price": 7
+  },
+  {
+    "name": "Terapagos Ex",
+    "price": 4
+  },
+  {
+    "name": "Thunderous Ex",
+    "price": 13
+  },
+  {
+    "name": "Xerneas EX",
+    "price": 39
   }
 ]
