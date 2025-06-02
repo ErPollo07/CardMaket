@@ -1,3 +1,6 @@
+// CardMarket Login Logic
+// Handles login form validation and user authentication.
+
 async function getUsers() {
   // Fetches user data from a local JSON file.
   const users = await fetch("../data/users.json");

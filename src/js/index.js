@@ -1,3 +1,6 @@
+// CardMarket Index Logic
+// Handles homepage interactions and dynamic content loading.
+
 async function getUsers() {
   // Fetches user data from a local JSON file.
   const users = await fetch("../data/users.json");

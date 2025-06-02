@@ -4,6 +4,12 @@
  * Copyright 2011-2025 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/*
+  CardMarket Main Stylesheet
+  This file contains global styles and component-specific rules for the CardMarket web application.
+  All comments are in English and describe the purpose of each section or block.
+*/
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;

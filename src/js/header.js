@@ -1,3 +1,6 @@
+// CardMarket Header Logic
+// Handles header UI interactions, such as account dropdown and logo animation.
+
 async function getUsers() {
   // Fetches user data from a local JSON file.
   const users = await fetch("../data/users.json");

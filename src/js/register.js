@@ -1,3 +1,6 @@
+// CardMarket Register Logic
+// Handles registration form validation, privacy checkbox, and user creation.
+
 async function getUsers() {
   // Fetches user data from a local JSON file.
   const users = await fetch("../data/users.json");

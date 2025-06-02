@@ -1,16 +1,14 @@
+// Wait for the DOM to be fully loaded before executing the script
 document.addEventListener("DOMContentLoaded", function () {
-  // Get the content div and card container elements
+  // Get the main content container where cart content will be rendered
   const contentDiv = document.getElementById("content");
-  const cardContainer = document.getElementById("card-row-container"); // This variable is declared but not used in the provided code.
 
-  // Get the cart of the logged-in user from localStorage
+  // Retrieve the currently logged-in user and their cart from localStorage
   const user = JSON.parse(localStorage.getItem("user"));
-  // Initialize cart; if user or user.cart is null/undefined, default to an empty array
   const cart = user ? user.cart : [];
 
-  // Check if the cart is empty
+  // If the cart is empty, display a message to the user
   if (cart.length === 0) {
-    // Put in the content div the empty cart message
     contentDiv.innerHTML = `
       <div id="empty-cart-message" class="d-flex align-items-center justify-content-center">
         <div class="empty-cart-emoji">🛒</div>
@@ -19,18 +17,16 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
   } else {
-    // Put in the content div the container for all the cards
+    // If the cart has items, render the card container
     contentDiv.innerHTML = `
       <div class="container card-container">
         <div class="row" id="card-row-container"></div>
       </div>
     `;
 
-    // Populate the container with individual product cards
+    // For each card in the cart, create and append a card element
     cart.forEach((card) => {
-      // Create a new div element for each card
       const cardElement = document.createElement("div");
-      // Add Bootstrap and custom classes for styling and responsiveness
       cardElement.classList.add(
         "card-market-item",
         "col-12",
@@ -39,10 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "col-sm-6",
         "mb-5"
       );
-      // Resolve the image file name based on the card's name (lowercase and spaces replaced with underscores)
+      // Generate the image file name based on the card's name
       const cardImageSrc = card.name.toLowerCase().replace(/ /g, "_");
-
-      // Set the inner HTML of the card element
       cardElement.innerHTML = `
           <div class="cm-card-item">
             <img
@@ -58,26 +52,22 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
           </div>
         `;
-
-      // Append the created card element to the card row container
       document.getElementById("card-row-container").appendChild(cardElement);
     });
   }
-  // Log the user's cart to the console for debugging purposes
+  // Log the user's cart to the console for debugging
   console.log("User's cart:", cart);
 });
 
-// Add an event listener to the "Buy Cart" button
+// Handle the purchase of the cart when the "Buy Cart" button is clicked
 document.getElementById("buy-cart-btn").addEventListener("mouseup", () => {
-  // Get the user data from localStorage
+  // Retrieve the user from localStorage
   const user = JSON.parse(localStorage.getItem("user"));
-
   // Clear the user's cart
   user.cart = [];
-  // Save the updated user data back to localStorage
+  // Save the updated user data
   localStorage.setItem("user", JSON.stringify(user));
-  // Display a success message to the user
+  // Show a confirmation message and redirect to the home page
   alert("Cart purchased successfully! Thank you for your order.");
-  // Redirect the user to the home page
   window.location.href = "index.html";
 });

@@ -1,3 +1,6 @@
+// CardMarket Footer Logic
+// Handles dynamic footer content and responsive behavior.
+
 document.addEventListener("DOMContentLoaded", () => {
   // Get the footer division element
   const footerDiv = document.getElementById("footer");
